@@ -22,6 +22,11 @@ public class NullSnapshotCollector implements SnapshotCollector {
 	@Override
 	public void addNaiveSnapshotInfo(String snapshotSubject, int amount) {}
 
+	@Override
+	public void addLYSnapshotInfo(int id, LYSnapshotResult lySnapshotResult) {
+
+	}
+
 
 	@Override
 	public void startCollecting() {}

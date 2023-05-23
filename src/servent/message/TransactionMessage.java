@@ -2,6 +2,7 @@ package servent.message;
 
 import app.ServentInfo;
 import app.snapshot_bitcake.BitcakeManager;
+import app.snapshot_bitcake.LaiYangBitcakeManager;
 
 /**
  * Represents a bitcake transaction. We are sending some bitcakes to another node.
@@ -30,5 +31,11 @@ public class TransactionMessage extends BasicMessage {
 		int amount = Integer.parseInt(getMessageText());
 		
 		bitcakeManager.takeSomeBitcakes(amount);
+
+		if (bitcakeManager instanceof LaiYangBitcakeManager && isWhite()) {
+			LaiYangBitcakeManager lyFinancialManager = (LaiYangBitcakeManager)bitcakeManager;
+
+			lyFinancialManager.recordGiveTransaction(getReceiverInfo().getId(), amount);
+		}
 	}
 }
