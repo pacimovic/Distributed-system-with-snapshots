@@ -100,7 +100,7 @@ public class SimpleServentListener implements Runnable, Cancellable {
                  */
                 switch (clientMessage.getMessageType()) {
                     case TRANSACTION:
-                        messageHandler = new TransactionHandler(clientMessage, snapshotCollector.getBitcakeManager());
+                        messageHandler = new TransactionHandler(clientMessage, snapshotCollector.getBitcakeManager(), !AppConfig.IS_CLIQUE);
                         break;
                     case LY_MARKER:
                         messageHandler = new LYMarkerHandler();

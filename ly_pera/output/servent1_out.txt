@@ -1,27 +1,23 @@
-10:48:27 - Starting servent [1|localhost|1200]
-10:48:27 - Pausing for 9000 ms
-10:48:28 - Got message [0|16|3|TRANSACTION|1]
-10:48:28 - Got message [0|32|2|TRANSACTION|1]
-10:48:28 - Got message [0|48|3|TRANSACTION|1]
-10:48:28 - Got message [0|52|8|TRANSACTION|1]
-10:48:28 - Got message [0|12|9|TRANSACTION|1]
-10:48:28 - Got message [0|8|7|TRANSACTION|1]
-10:48:28 - Got message [0|24|6|TRANSACTION|1]
-10:48:28 - Got message [0|20|2|TRANSACTION|1]
-10:48:28 - Got message [0|0|2|TRANSACTION|1]
-10:48:28 - Got message [0|44|8|TRANSACTION|1]
-10:48:28 - Got message [0|4|2|TRANSACTION|1]
-10:48:28 - Got message [0|40|5|TRANSACTION|1]
-10:48:29 - Got message [0|28|2|TRANSACTION|1]
-10:48:29 - Got message [0|36|5|TRANSACTION|1]
-10:48:29 - Got message [0|56|4|TRANSACTION|1]
-10:48:31 - Got message [4|1|4|LY_MARKER|1]
-10:48:31 - Got message [2|2|4|LY_MARKER|1]
-10:48:31 - Sending message [1|3|4|LY_MARKER|3]
-10:48:32 - Got message [3|2|4|LY_MARKER|1]
-10:48:32 - Got message [0|61|4|LY_MARKER|1]
-10:48:32 - Sending message [1|4|4|LY_MARKER|4]
-10:48:32 - Sending message [1|2|4|LY_MARKER|2]
-10:48:32 - Sending message [1|1|4|LY_MARKER|0]
-10:48:32 - Sending message [1|0||LY_TELL|4]
-10:48:36 - Stopping...
+20:38:50 - Starting servent [1|localhost|1200]
+20:38:50 - Pausing for 9000 ms
+20:38:52 - Got message [0|2|9|TRANSACTION|1]
+20:38:52 - Got message [0|0|8|TRANSACTION|1]
+20:38:52 - Rebroadcasting... 1
+20:38:52 - Rebroadcasting... 2
+20:38:53 - Sending message [0|0|8|TRANSACTION|0]
+20:38:53 - Sending message [0|2|9|TRANSACTION|0]
+20:38:53 - Sending message [0|0|8|TRANSACTION|3]
+20:38:53 - Got message [0|1|8|TRANSACTION|1]
+20:38:53 - Rebroadcasting... 3
+20:38:53 - Sending message [0|2|9|TRANSACTION|3]
+20:38:54 - Sending message [0|1|8|TRANSACTION|0]
+20:38:54 - Got message [0|0|8|TRANSACTION|1]
+20:38:54 - Already had this. No rebroadcast.
+20:38:54 - Got message [0|3|9|TRANSACTION|1]
+20:38:54 - Rebroadcasting... 4
+20:38:55 - Sending message [0|1|8|TRANSACTION|3]
+20:38:55 - Got message [0|2|9|TRANSACTION|1]
+20:38:55 - Already had this. No rebroadcast.
+20:38:55 - Sending message [0|3|9|TRANSACTION|0]
+20:38:55 - Sending message [0|3|9|TRANSACTION|3]
+20:38:59 - Stopping...

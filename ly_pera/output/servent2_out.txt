@@ -1,27 +1,23 @@
-10:48:27 - Starting servent [2|localhost|1300]
-10:48:27 - Pausing for 9000 ms
-10:48:28 - Got message [0|21|5|TRANSACTION|2]
-10:48:28 - Got message [0|1|5|TRANSACTION|2]
-10:48:28 - Got message [0|5|9|TRANSACTION|2]
-10:48:28 - Got message [0|9|4|TRANSACTION|2]
-10:48:28 - Got message [0|29|1|TRANSACTION|2]
-10:48:28 - Got message [0|49|5|TRANSACTION|2]
-10:48:28 - Got message [0|41|7|TRANSACTION|2]
-10:48:28 - Got message [0|57|6|TRANSACTION|2]
-10:48:28 - Got message [0|13|6|TRANSACTION|2]
-10:48:28 - Got message [0|45|5|TRANSACTION|2]
-10:48:28 - Got message [0|53|6|TRANSACTION|2]
-10:48:28 - Got message [0|25|5|TRANSACTION|2]
-10:48:28 - Got message [0|33|1|TRANSACTION|2]
-10:48:28 - Got message [0|17|5|TRANSACTION|2]
-10:48:29 - Got message [0|37|9|TRANSACTION|2]
-10:48:30 - Got message [4|2|4|LY_MARKER|2]
-10:48:31 - Sending message [2|3|4|LY_MARKER|3]
-10:48:31 - Sending message [2|1|4|LY_MARKER|0]
-10:48:31 - Sending message [2|0||LY_TELL|4]
-10:48:31 - Sending message [2|4|4|LY_MARKER|4]
-10:48:31 - Sending message [2|2|4|LY_MARKER|1]
-10:48:32 - Got message [0|62|4|LY_MARKER|2]
-10:48:32 - Got message [3|3|4|LY_MARKER|2]
-10:48:32 - Got message [1|2|4|LY_MARKER|2]
-10:48:36 - Stopping...
+20:38:50 - Starting servent [2|localhost|1300]
+20:38:51 - Pausing for 9000 ms
+20:38:51 - Got message [0|1|8|TRANSACTION|2]
+20:38:51 - Rebroadcasting... 1
+20:38:51 - Got message [0|3|9|TRANSACTION|2]
+20:38:51 - Rebroadcasting... 2
+20:38:52 - Sending message [0|1|8|TRANSACTION|3]
+20:38:52 - Sending message [0|3|9|TRANSACTION|0]
+20:38:53 - Sending message [0|1|8|TRANSACTION|0]
+20:38:53 - Sending message [0|3|9|TRANSACTION|3]
+20:38:53 - Got message [0|1|8|TRANSACTION|2]
+20:38:53 - Already had this. No rebroadcast.
+20:38:54 - Got message [0|3|9|TRANSACTION|2]
+20:38:54 - Already had this. No rebroadcast.
+20:38:54 - Got message [0|0|8|TRANSACTION|2]
+20:38:54 - Rebroadcasting... 3
+20:38:55 - Got message [0|2|9|TRANSACTION|2]
+20:38:55 - Rebroadcasting... 4
+20:38:55 - Sending message [0|0|8|TRANSACTION|0]
+20:38:55 - Sending message [0|0|8|TRANSACTION|3]
+20:38:55 - Sending message [0|2|9|TRANSACTION|0]
+20:38:56 - Sending message [0|2|9|TRANSACTION|3]
+20:39:00 - Stopping...
