@@ -1,0 +1,41 @@
+10:48:27 - Starting servent [4|localhost|1500]
+10:48:27 - Pausing for 1000 ms
+10:48:28 - Got message [0|3|7|TRANSACTION|4]
+10:48:28 - Got message [0|31|1|TRANSACTION|4]
+10:48:28 - Got message [0|43|10|TRANSACTION|4]
+10:48:28 - Got message [0|47|5|TRANSACTION|4]
+10:48:28 - Got message [0|39|8|TRANSACTION|4]
+10:48:28 - Got message [0|19|1|TRANSACTION|4]
+10:48:28 - Got message [0|23|1|TRANSACTION|4]
+10:48:28 - Got message [0|35|4|TRANSACTION|4]
+10:48:28 - Pausing for 8000 ms
+10:48:28 - Got message [0|27|5|TRANSACTION|4]
+10:48:28 - Got message [0|7|10|TRANSACTION|4]
+10:48:28 - Got message [0|11|2|TRANSACTION|4]
+10:48:28 - Got message [0|55|10|TRANSACTION|4]
+10:48:28 - Got message [0|59|5|TRANSACTION|4]
+10:48:29 - Got message [0|51|8|TRANSACTION|4]
+10:48:29 - Got message [0|15|3|TRANSACTION|4]
+10:48:30 - Sending message [4|2|4|LY_MARKER|2]
+10:48:31 - Sending message [4|0|4|LY_MARKER|0]
+10:48:31 - Sending message [4|1|4|LY_MARKER|1]
+10:48:31 - Sending message [4|3|4|LY_MARKER|3]
+10:48:31 - Got message [2|0||LY_TELL|4]
+10:48:31 - Got message [2|4|4|LY_MARKER|4]
+10:48:32 - Got message [3|0||LY_TELL|4]
+10:48:32 - Got message [0|64|4|LY_MARKER|4]
+10:48:32 - Got message [1|4|4|LY_MARKER|4]
+10:48:32 - Got message [0|60||LY_TELL|4]
+10:48:32 - Got message [1|0||LY_TELL|4]
+10:48:32 - Got message [3|4|4|LY_MARKER|4]
+10:48:34 - Recorded bitcake amount for 0 = 696
+10:48:34 - Recorded bitcake amount for 1 = 1068
+10:48:34 - Recorded bitcake amount for 2 = 1079
+10:48:34 - Recorded bitcake amount for 3 = 1077
+10:48:34 - Recorded bitcake amount for 4 = 1080
+10:48:34 - Unreceived bitcake amount: 68 from servent 0 to servent 1
+10:48:34 - Unreceived bitcake amount: 79 from servent 0 to servent 2
+10:48:34 - Unreceived bitcake amount: 77 from servent 0 to servent 3
+10:48:34 - Unreceived bitcake amount: 80 from servent 0 to servent 4
+10:48:34 - System bitcake count: 5304
+10:48:36 - Stopping...
