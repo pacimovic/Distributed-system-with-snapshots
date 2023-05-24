@@ -7,7 +7,7 @@ package app.snapshot_bitcake;
  * @author bmilojkovic
  *
  */
-public interface BitcakeManager {
+public interface BitcakeManager{
 
 	public void takeSomeBitcakes(int amount);
 	public void addSomeBitcakes(int amount);

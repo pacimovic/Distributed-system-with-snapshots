@@ -2,6 +2,7 @@ package servent.message;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -131,7 +132,6 @@ public class BasicMessage implements Message {
 			return toReturn;
 		} else {
 			AppConfig.timestampedErrorPrint("Trying to make a message for " + newReceiverId + " who is not a neighbor.");
-			
 			return null;
 		}
 		
@@ -196,4 +196,5 @@ public class BasicMessage implements Message {
 	public void sendEffect() {
 		
 	}
+
 }

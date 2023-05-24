@@ -1,8 +1,11 @@
 package cli.command;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 import app.AppConfig;
+import app.CausalBroadcastShared;
 import app.ServentInfo;
 import app.snapshot_bitcake.BitcakeManager;
 import servent.message.Message;
@@ -27,6 +30,13 @@ public class TransactionBurstCommand implements CLICommand {
 		@Override
 		public void run() {
 			ThreadLocalRandom rand = ThreadLocalRandom.current();
+
+			//Svim porukama dajemo nas vektorski sat
+			Map<Integer, Integer> myClock = new ConcurrentHashMap<Integer, Integer>();
+			for (Map.Entry<Integer, Integer> entry : CausalBroadcastShared.getVectorClock().entrySet()) {
+				myClock.put(entry.getKey(), entry.getValue());
+			}
+
 			for (int i = 0; i < TRANSACTION_COUNT; i++) {
 
 
@@ -35,14 +45,11 @@ public class TransactionBurstCommand implements CLICommand {
 					
 					int amount = 1 + rand.nextInt(MAX_TRANSFER_AMOUNT);
 
-					/*
-					 * The message itself will reduce our bitcake count as it is being sent.
-					 * The sending might be delayed, so we want to make sure we do the
-					 * reducing at the right time, not earlier.
-					 */
+					//Komitujemo poruku kod nas i uvecamo vektorski sat
 					Message transactionMessage = new TransactionMessage(
-							AppConfig.myServentInfo, neighborInfo, amount, bitcakeManager);
-					
+							AppConfig.myServentInfo, neighborInfo, amount, bitcakeManager, myClock);
+					CausalBroadcastShared.commitCausalMessage(transactionMessage);
+
 					MessageUtil.sendMessage(transactionMessage);
 				}
 				

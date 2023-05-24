@@ -1,6 +1,7 @@
 package servent.handler;
 
 import app.AppConfig;
+import app.CausalBroadcastShared;
 import app.ServentInfo;
 import app.snapshot_bitcake.BitcakeManager;
 import app.snapshot_bitcake.LaiYangBitcakeManager;
@@ -57,7 +58,6 @@ public class TransactionHandler implements MessageHandler {
 						}
 						bitcakeManager.addSomeBitcakes(amountNumber);
 
-
 						synchronized (AppConfig.colorLock) {
 
 							if (bitcakeManager instanceof LaiYangBitcakeManager && clientMessage.isWhite()) {
@@ -78,32 +78,21 @@ public class TransactionHandler implements MessageHandler {
 							MessageUtil.sendMessage(clientMessage.changeReceiver(neighbor).makeMeASender());
 						}
 
+						//Dodamo poruku u pending messages i komitujemo ako mozemo
+						CausalBroadcastShared.addPendingMessage(clientMessage);
+						CausalBroadcastShared.checkPendingMessages();
+
 					} else {
 						//We already got this from somewhere else. /ignore
 						AppConfig.timestampedStandardPrint("Already had this. No rebroadcast.");
 					}
 				}
 			} else{
-				//dodaj bitcake-ove i zabelezi u istoriju dobijenih transakcija
-				String amountString = clientMessage.getMessageText();
-
-				int amountNumber = 0;
-				try {
-					amountNumber = Integer.parseInt(amountString);
-				} catch (NumberFormatException e) {
-					AppConfig.timestampedErrorPrint("Couldn't parse amount: " + amountString);
-					return;
-				}
-				bitcakeManager.addSomeBitcakes(amountNumber);
+				//ako nije kompletan graf
 
 
-				synchronized (AppConfig.colorLock) {
-					if (bitcakeManager instanceof LaiYangBitcakeManager && clientMessage.isWhite()) {
-						LaiYangBitcakeManager lyBitcakeManager = (LaiYangBitcakeManager)bitcakeManager;
-
-						lyBitcakeManager.recordGetTransaction(clientMessage.getOriginalSenderInfo().getId(), amountNumber);
-					}
-				}
+//				CausalBroadcastShared.addPendingMessage(clientMessage);
+//				CausalBroadcastShared.checkPendingMessages();
 			}
 
 		} else {

@@ -7,6 +7,8 @@ import java.net.Socket;
 import app.AppConfig;
 import app.ServentInfo;
 import servent.message.Message;
+import servent.message.MessageType;
+import servent.message.TransactionMessage;
 
 /**
  * This worker sends a message asynchronously. Doing this in a separate thread
@@ -38,6 +40,10 @@ public class DelayedMessageSender implements Runnable {
 		
 		if (MessageUtil.MESSAGE_UTIL_PRINTING) {
 			AppConfig.timestampedStandardPrint("Sending message " + messageToSend);
+			if(messageToSend.getMessageType() == MessageType.TRANSACTION){
+				TransactionMessage transactionMessage = (TransactionMessage) messageToSend;
+				AppConfig.timestampedStandardPrint("Sender vector clock: "+ transactionMessage.getSenderVectorClock());
+			}
 		}
 		
 		try {

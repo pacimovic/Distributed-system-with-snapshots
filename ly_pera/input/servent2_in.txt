@@ -1,2 +1,3 @@
-pause 9000
+pause 14000
+print_causal
 stop

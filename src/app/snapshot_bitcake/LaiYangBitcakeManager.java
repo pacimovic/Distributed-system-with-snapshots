@@ -6,12 +6,13 @@ import servent.message.snapshot.LYMarkerMessage;
 import servent.message.snapshot.LYTellMessage;
 import servent.message.util.MessageUtil;
 
+import java.io.Serializable;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiFunction;
 
-public class LaiYangBitcakeManager implements BitcakeManager{
+public class LaiYangBitcakeManager implements BitcakeManager {
 
     private final AtomicInteger currentAmount = new AtomicInteger(1000);
 

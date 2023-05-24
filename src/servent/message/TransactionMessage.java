@@ -1,8 +1,14 @@
 package servent.message;
 
+import app.AppConfig;
 import app.ServentInfo;
 import app.snapshot_bitcake.BitcakeManager;
+import app.snapshot_bitcake.LYSnapshotResult;
 import app.snapshot_bitcake.LaiYangBitcakeManager;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Represents a bitcake transaction. We are sending some bitcakes to another node.
@@ -15,12 +21,23 @@ public class TransactionMessage extends BasicMessage {
 	private static final long serialVersionUID = -333251402058492901L;
 
 	private transient BitcakeManager bitcakeManager;
+
+	private Map<Integer, Integer> senderVectorClock;
 	
-	public TransactionMessage(ServentInfo sender, ServentInfo receiver, int amount, BitcakeManager bitcakeManager) {
+	public TransactionMessage(ServentInfo sender, ServentInfo receiver, int amount, BitcakeManager bitcakeManager,
+							  Map<Integer, Integer> senderVectorClock) {
 		super(MessageType.TRANSACTION, sender, receiver, String.valueOf(amount));
 		this.bitcakeManager = bitcakeManager;
+		this.senderVectorClock = senderVectorClock;
 	}
-	
+
+	private TransactionMessage(MessageType messageType, ServentInfo sender, ServentInfo receiver,
+							   boolean white, List<ServentInfo> routeList, String messageText, int messageId,
+							   BitcakeManager bitcakeManager ,Map<Integer, Integer> senderVectorClock){
+		super(messageType, sender, receiver, white, routeList, messageText, messageId);
+		this.bitcakeManager = bitcakeManager;
+		this.senderVectorClock = senderVectorClock;
+	}
 	/**
 	 * We want to take away our amount exactly as we are sending, so our snapshots don't mess up.
 	 * This method is invoked by the sender just before sending, and with a lock that guarantees
@@ -28,7 +45,14 @@ public class TransactionMessage extends BasicMessage {
 	 */
 	@Override
 	public void sendEffect() {
-		int amount = Integer.parseInt(getMessageText());
+		//Ako nije nasa poruka ne skidamo sebi bitcakeove nego samo posaljemo dalje
+		if(getOriginalSenderInfo().getId() != AppConfig.myServentInfo.getId()) return;
+
+		/*
+		ako jeste nasa poruka skidamo sebi broj_servenata * kolicina_bitcake-ova,
+		jer ce kroz broadcast transakcija stici svakom serventu u grafu
+		 */
+		int amount = Integer.parseInt(getMessageText()) * AppConfig.getServentCount();
 		
 		bitcakeManager.takeSomeBitcakes(amount);
 
@@ -37,5 +61,43 @@ public class TransactionMessage extends BasicMessage {
 
 			lyFinancialManager.recordGiveTransaction(getReceiverInfo().getId(), amount);
 		}
+	}
+
+
+	@Override
+	public Message makeMeASender() {
+		ServentInfo newRouteItem = AppConfig.myServentInfo;
+
+		List<ServentInfo> newRouteList = new ArrayList<>(getRoute());
+		newRouteList.add(newRouteItem);
+		Message toReturn = new TransactionMessage(getMessageType(), getOriginalSenderInfo(),
+				getReceiverInfo(), isWhite(), newRouteList, getMessageText(), getMessageId(),
+				getBitcakeManager(), getSenderVectorClock());
+
+		return toReturn;
+	}
+
+	@Override
+	public Message changeReceiver(Integer newReceiverId) {
+		if (AppConfig.myServentInfo.getNeighbors().contains(newReceiverId)) {
+			ServentInfo newReceiverInfo = AppConfig.getInfoById(newReceiverId);
+
+			Message toReturn = new TransactionMessage(getMessageType(), getOriginalSenderInfo(),
+					newReceiverInfo, isWhite(), getRoute(), getMessageText(), getMessageId(),
+					getBitcakeManager(), getSenderVectorClock());
+
+			return toReturn;
+		} else {
+			AppConfig.timestampedErrorPrint("Trying to make a message for " + newReceiverId + " who is not a neighbor.");
+			return null;
+		}
+	}
+
+	public Map<Integer, Integer> getSenderVectorClock() {
+		return senderVectorClock;
+	}
+
+	public BitcakeManager getBitcakeManager() {
+		return bitcakeManager;
 	}
 }
