@@ -40,10 +40,10 @@ public class DelayedMessageSender implements Runnable {
 		
 		if (MessageUtil.MESSAGE_UTIL_PRINTING) {
 			AppConfig.timestampedStandardPrint("Sending message " + messageToSend);
-			if(messageToSend.getMessageType() == MessageType.TRANSACTION){
-				TransactionMessage transactionMessage = (TransactionMessage) messageToSend;
-				AppConfig.timestampedStandardPrint("Sender vector clock: "+ transactionMessage.getSenderVectorClock());
-			}
+//			if(messageToSend.getMessageType() == MessageType.TRANSACTION){
+//				TransactionMessage transactionMessage = (TransactionMessage) messageToSend;
+//				AppConfig.timestampedStandardPrint("Sender vector clock: "+ transactionMessage.getSenderVectorClock());
+//			}
 		}
 		
 		try {

@@ -21,7 +21,8 @@ public class LYTellHandler implements MessageHandler {
     public void run() {
         if (clientMessage.getMessageType() == MessageType.LY_TELL) {
             LYTellMessage lyTellMessage = (LYTellMessage)clientMessage;
-
+//            AppConfig.timestampedStandardPrint("Amount of bitcakes of servent: " + lyTellMessage.getOriginalSenderInfo().getId() +
+//                    " is " + lyTellMessage.getLYSnapshotResult().getRecordedAmount());
             snapshotCollector.addLYSnapshotInfo(
                     lyTellMessage.getOriginalSenderInfo().getId(),
                     lyTellMessage.getLYSnapshotResult());

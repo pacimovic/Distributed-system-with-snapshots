@@ -6,9 +6,10 @@ import servent.message.snapshot.LYMarkerMessage;
 import servent.message.snapshot.LYTellMessage;
 import servent.message.util.MessageUtil;
 
-import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiFunction;
 
@@ -33,6 +34,8 @@ public class LaiYangBitcakeManager implements BitcakeManager {
 
     private Map<Integer, Integer> giveHistory = new ConcurrentHashMap<>();
     private Map<Integer, Integer> getHistory = new ConcurrentHashMap<>();
+
+    private static List<Message> sentMessages = new CopyOnWriteArrayList<>();
 
     public LaiYangBitcakeManager() {
         for (Integer neghbor: AppConfig.myServentInfo.getNeighbors()){
@@ -102,5 +105,12 @@ public class LaiYangBitcakeManager implements BitcakeManager {
         getHistory.compute(neighbor, new MapValueUpdater(amount));
     }
 
+    public List<Message> getSentMessages() {
+        List<Message> toReturn = new CopyOnWriteArrayList<>(sentMessages);
+        return toReturn;
+    }
 
+    public void addSentMessages(Message message){
+        sentMessages.add(message);
+    }
 }

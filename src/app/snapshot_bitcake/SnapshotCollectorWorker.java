@@ -27,7 +27,7 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 
 	private Map<Integer, LYSnapshotResult> collectedLYValues = new ConcurrentHashMap<>();
 
-	private SnapshotType snapshotType = SnapshotType.NAIVE;
+	private SnapshotType snapshotType;
 
 	private BitcakeManager bitcakeManager;
 
@@ -133,6 +133,7 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 						AppConfig.timestampedStandardPrint(
 								"Recorded bitcake amount for " + nodeResult.getKey() + " = " + nodeResult.getValue().getRecordedAmount());
 					}
+					/*
 					for(int i = 0; i < AppConfig.getServentCount(); i++) {
 						for (int j = 0; j < AppConfig.getServentCount(); j++) {
 							if (i != j) {
@@ -151,7 +152,7 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 								}
 							}
 						}
-					}
+					}*/
 
 					AppConfig.timestampedStandardPrint("System bitcake count: " + sum);
 
@@ -171,6 +172,7 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 	public void addNaiveSnapshotInfo(String snapshotSubject, int amount) {
 		collectedNaiveValues.put(snapshotSubject, amount);
 	}
+
 	@Override
 	public void addLYSnapshotInfo(int id, LYSnapshotResult lySnapshotResult) {
 		collectedLYValues.put(id, lySnapshotResult);
