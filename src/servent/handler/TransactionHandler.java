@@ -82,6 +82,7 @@ public class TransactionHandler implements MessageHandler {
 						CausalBroadcastShared.addPendingMessage(clientMessage);
 						CausalBroadcastShared.checkPendingMessages();
 
+
 					} else {
 						//We already got this from somewhere else. /ignore
 						AppConfig.timestampedStandardPrint("Already had this. No rebroadcast.");
