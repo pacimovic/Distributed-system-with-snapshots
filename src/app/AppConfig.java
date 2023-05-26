@@ -204,4 +204,7 @@ public class AppConfig {
 		return serventInfoList.size();
 	}
 
+	public static List<ServentInfo> getServentInfoList() {
+		return serventInfoList;
+	}
 }

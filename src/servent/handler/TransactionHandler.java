@@ -62,11 +62,8 @@ public class TransactionHandler implements MessageHandler {
 
 							if (bitcakeManager instanceof LaiYangBitcakeManager && clientMessage.isWhite()) {
 								LaiYangBitcakeManager lyBitcakeManager = (LaiYangBitcakeManager)bitcakeManager;
-								//Zabelezimo transakciju u istoriju od poslednjeg sendera(ne originalnog!)
-								ServentInfo lastSenderInfo = clientMessage.getRoute().size() == 0 ?
-										clientMessage.getOriginalSenderInfo() :
-										clientMessage.getRoute().get(clientMessage.getRoute().size()-1);
-								lyBitcakeManager.recordGetTransaction(lastSenderInfo.getId(), amountNumber);
+								//zabelezimo u istoriju dobijenih transakcija kolicinu od originalnog posiljaoca
+								lyBitcakeManager.recordGetTransaction(clientMessage.getOriginalSenderInfo().getId(), amountNumber);
 							}
 
 						}

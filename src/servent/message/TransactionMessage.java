@@ -53,23 +53,24 @@ public class TransactionMessage extends BasicMessage {
 
 		//ako je poruka vec poslata ne oduzimamo opet sebi bitackove od svih servenata!
 		LaiYangBitcakeManager bitcakeManagerSentMessages = (LaiYangBitcakeManager) bitcakeManager;
-		if(bitcakeManagerSentMessages.getSentMessages().contains(this)){
-			return;
-		} else{
-			bitcakeManagerSentMessages.addSentMessages(this);
-		}
+		if(bitcakeManagerSentMessages.getSentMessages().contains(this)) return;
+		else bitcakeManagerSentMessages.addSentMessages(this);
+
 
         /*
 		ako jeste nasa poruka skidamo sebi broj_servenata * kolicina_bitcake-ova,
-		jer ce kroz broadcast transakcija stici svakom serventu u grafu
+		jer ce kroz broadcast transakcija stici svakom serventu u grafu.
+		Takodje zabelezimo u istoriju da smo dali ovaj amount svim serventima(jer ce ta transakcija do njih stici)
 		 */
 		int amount = Integer.parseInt(getMessageText()) * (AppConfig.getServentCount() - 1);
 		bitcakeManager.takeSomeBitcakes(amount);
 
 		if (bitcakeManager instanceof LaiYangBitcakeManager && isWhite()) {
 			LaiYangBitcakeManager lyFinancialManager = (LaiYangBitcakeManager)bitcakeManager;
+			for(ServentInfo servent: AppConfig.getServentInfoList()){
+				lyFinancialManager.recordGiveTransaction(servent.getId(), Integer.parseInt(getMessageText()));
+			}
 
-			lyFinancialManager.recordGiveTransaction(getReceiverInfo().getId(), amount);
 		}
 
 

@@ -133,12 +133,12 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 						AppConfig.timestampedStandardPrint(
 								"Recorded bitcake amount for " + nodeResult.getKey() + " = " + nodeResult.getValue().getRecordedAmount());
 					}
-					/*
+
 					for(int i = 0; i < AppConfig.getServentCount(); i++) {
 						for (int j = 0; j < AppConfig.getServentCount(); j++) {
 							if (i != j) {
-								if (AppConfig.getInfoById(i).getNeighbors().contains(j) &&
-										AppConfig.getInfoById(j).getNeighbors().contains(i)) {
+//								if (AppConfig.getInfoById(i).getNeighbors().contains(j) &&
+//										AppConfig.getInfoById(j).getNeighbors().contains(i)) {
 									int ijAmount = collectedLYValues.get(i).getGiveHistory().get(j);
 									int jiAmount = collectedLYValues.get(j).getGetHistory().get(i);
 
@@ -149,10 +149,10 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 										AppConfig.timestampedStandardPrint(outputString);
 										sum += ijAmount - jiAmount;
 									}
-								}
+//								}
 							}
 						}
-					}*/
+					}
 
 					AppConfig.timestampedStandardPrint("System bitcake count: " + sum);
 

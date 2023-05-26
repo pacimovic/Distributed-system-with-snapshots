@@ -1,6 +1,7 @@
 package app.snapshot_bitcake;
 
 import app.AppConfig;
+import app.ServentInfo;
 import servent.message.Message;
 import servent.message.snapshot.LYMarkerMessage;
 import servent.message.snapshot.LYTellMessage;
@@ -38,9 +39,9 @@ public class LaiYangBitcakeManager implements BitcakeManager {
     private static List<Message> sentMessages = new CopyOnWriteArrayList<>();
 
     public LaiYangBitcakeManager() {
-        for (Integer neghbor: AppConfig.myServentInfo.getNeighbors()){
-            giveHistory.put(neghbor, 0);
-            getHistory.put(neghbor, 0);
+        for (ServentInfo servent: AppConfig.getServentInfoList()){
+            giveHistory.put(servent.getId(), 0);
+            getHistory.put(servent.getId(), 0);
         }
 
     }
