@@ -24,8 +24,8 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 	private AtomicBoolean collecting = new AtomicBoolean(false);
 
 	private Map<String, Integer> collectedNaiveValues = new ConcurrentHashMap<>();
-
 	private Map<Integer, LYSnapshotResult> collectedLYValues = new ConcurrentHashMap<>();
+	private Map<Integer, ABSnapshotResult> collectedABValues = new ConcurrentHashMap<>();
 
 	private SnapshotType snapshotType;
 
@@ -80,6 +80,9 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 				case LAI_YANG:
 					((LaiYangBitcakeManager)bitcakeManager).markerEvent(AppConfig.myServentInfo.getId(), this);
 					break;
+				case ACHARYA_BADRINATH:
+					((ABBitcakeManager)bitcakeManager).tokenEvent(AppConfig.myServentInfo.getId(), this);
+					break;
 				case NONE:
 					//Shouldn't be able to come here. See constructor.
 					break;
@@ -91,6 +94,11 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 				switch (snapshotType) {
 					case LAI_YANG:
 						if (collectedLYValues.size() == AppConfig.getServentCount()) {
+							waiting = false;
+						}
+						break;
+					case ACHARYA_BADRINATH:
+						if(collectedABValues.size() == AppConfig.getServentCount()) {
 							waiting = false;
 						}
 						break;
@@ -177,6 +185,12 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 	public void addLYSnapshotInfo(int id, LYSnapshotResult lySnapshotResult) {
 		collectedLYValues.put(id, lySnapshotResult);
 	}
+
+	@Override
+	public void addABSnapshotInfo(int id, ABSnapshotResult abSnapshotResult) {
+		collectedABValues.put(id, abSnapshotResult);
+	}
+
 
 	@Override
 	public void startCollecting() {

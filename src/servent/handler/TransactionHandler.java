@@ -68,7 +68,6 @@ public class TransactionHandler implements MessageHandler {
 
 						}
 
-
 						//rebroadcast-uj svim komsijama
 						for (Integer neighbor : AppConfig.myServentInfo.getNeighbors()) {
 							//Same message, different receiver, and add us to the route table.
@@ -87,8 +86,6 @@ public class TransactionHandler implements MessageHandler {
 				}
 			} else{
 				//ako nije kompletan graf
-
-
 //				CausalBroadcastShared.addPendingMessage(clientMessage);
 //				CausalBroadcastShared.checkPendingMessages();
 			}
