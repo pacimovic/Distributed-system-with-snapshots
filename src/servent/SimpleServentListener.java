@@ -17,6 +17,8 @@ import app.snapshot_bitcake.SnapshotType;
 import servent.handler.MessageHandler;
 import servent.handler.NullHandler;
 import servent.handler.TransactionHandler;
+import servent.handler.snapshot.ABTellHandler;
+import servent.handler.snapshot.ABTokenHandler;
 import servent.handler.snapshot.LYMarkerHandler;
 import servent.handler.snapshot.LYTellHandler;
 import servent.message.Message;
@@ -107,6 +109,12 @@ public class SimpleServentListener implements Runnable, Cancellable {
                         break;
                     case LY_TELL:
                         messageHandler = new LYTellHandler(clientMessage, snapshotCollector);
+                        break;
+                    case AB_TOKEN:
+                        messageHandler = new ABTokenHandler(clientMessage, snapshotCollector.getBitcakeManager(), !AppConfig.IS_CLIQUE);
+                        break;
+                    case AB_TELL:
+                        messageHandler = new ABTellHandler(clientMessage, snapshotCollector);
                         break;
                     case POISON:
                         break;

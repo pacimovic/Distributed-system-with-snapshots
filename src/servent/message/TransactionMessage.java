@@ -2,6 +2,7 @@ package servent.message;
 
 import app.AppConfig;
 import app.ServentInfo;
+import app.snapshot_bitcake.ABBitcakeManager;
 import app.snapshot_bitcake.BitcakeManager;
 import app.snapshot_bitcake.LYSnapshotResult;
 import app.snapshot_bitcake.LaiYangBitcakeManager;
@@ -52,7 +53,7 @@ public class TransactionMessage extends BasicMessage {
 		if(getOriginalSenderInfo().getId() != AppConfig.myServentInfo.getId()) return;
 
 		//ako je poruka vec poslata ne oduzimamo opet sebi bitackove od svih servenata!
-		LaiYangBitcakeManager bitcakeManagerSentMessages = (LaiYangBitcakeManager) bitcakeManager;
+		ABBitcakeManager bitcakeManagerSentMessages = (ABBitcakeManager) bitcakeManager;
 		if(bitcakeManagerSentMessages.getSentMessages().contains(this)) return;
 		else bitcakeManagerSentMessages.addSentMessages(this);
 
@@ -65,12 +66,11 @@ public class TransactionMessage extends BasicMessage {
 		int amount = Integer.parseInt(getMessageText()) * (AppConfig.getServentCount() - 1);
 		bitcakeManager.takeSomeBitcakes(amount);
 
-		if (bitcakeManager instanceof LaiYangBitcakeManager && isWhite()) {
-			LaiYangBitcakeManager lyFinancialManager = (LaiYangBitcakeManager)bitcakeManager;
+		if (bitcakeManager instanceof ABBitcakeManager && isWhite()) {
+			ABBitcakeManager abFinancialManager = (ABBitcakeManager)bitcakeManager;
 			for(ServentInfo servent: AppConfig.getServentInfoList()){
-				lyFinancialManager.recordGiveTransaction(servent.getId(), Integer.parseInt(getMessageText()));
+				abFinancialManager.recordSentTransaction(servent.getId(), Integer.parseInt(getMessageText()));
 			}
-
 		}
 
 

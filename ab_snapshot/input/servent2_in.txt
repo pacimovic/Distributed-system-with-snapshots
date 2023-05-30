@@ -1,5 +1,5 @@
-pause 2000
+pause 3000
 transaction_burst
-pause 10000
+pause 7000
 print_causal
 stop

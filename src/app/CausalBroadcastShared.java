@@ -1,5 +1,8 @@
 package app;
 
+import app.snapshot_bitcake.ABBitcakeManager;
+import app.snapshot_bitcake.BitcakeManager;
+import app.snapshot_bitcake.LaiYangBitcakeManager;
 import servent.message.Message;
 import servent.message.TransactionMessage;
 
@@ -18,7 +21,12 @@ public class CausalBroadcastShared {
     private static List<Message> commitedCausalMessageList = new CopyOnWriteArrayList<>();
     private static Queue<Message> pendingMessages = new ConcurrentLinkedQueue<>();
     private static Object pendingMessagesLock = new Object();
+    private static BitcakeManager bitcakeManager = null;
 
+
+    public static void initializeBitcakeManager(BitcakeManager bitcakeManagerCausal){
+        bitcakeManager = bitcakeManagerCausal;
+    }
 
     public static void initializeVectorClock(int serventCount) {
         for(int i = 0; i < serventCount; i++) {
@@ -39,6 +47,7 @@ public class CausalBroadcastShared {
     public static Map<Integer, Integer> getVectorClock() {
         return vectorClock;
     }
+
 
     public static List<Message> getCommitedCausalMessages() {
         List<Message> toReturn = new CopyOnWriteArrayList<>(commitedCausalMessageList);
@@ -80,6 +89,7 @@ public class CausalBroadcastShared {
 
                 Map<Integer, Integer> myVectorClock = getVectorClock();
                 while (iterator.hasNext()) {
+                    //U pending messages uvek ce biti samo transakcije!
                     Message pendingMessage = iterator.next();
                     TransactionMessage transactionMessage = (TransactionMessage) pendingMessage;
 
@@ -87,10 +97,27 @@ public class CausalBroadcastShared {
                         gotWork = true;
 
                         /*
-                        Ovde ubacujemo logiku za dodavanje bitcake-ova ukoliko je TRANSAKCIJA  ,
-                        i markiranje serventa ukoliko je MARKER
+                        Ovde ubacujemo logiku za dodavanje bitcake-ova ukoliko je TRANSAKCIJA
                          */
+                        //dodaj bitcake-ove i zabelezi u istoriju dobijenih transakcija
+                        String amountString = transactionMessage.getMessageText();
 
+                        int amountNumber = 0;
+                        try {
+                            amountNumber = Integer.parseInt(amountString);
+                        } catch (NumberFormatException e) {
+                            AppConfig.timestampedErrorPrint("Couldn't parse amount: " + amountString);
+                            return;
+                        }
+                        bitcakeManager.addSomeBitcakes(amountNumber);
+
+                        synchronized (AppConfig.colorLock) {
+                            if (bitcakeManager instanceof ABBitcakeManager) {
+                                ABBitcakeManager abBitcakeManager = (ABBitcakeManager) bitcakeManager;
+                                //zabelezimo u istoriju dobijenih transakcija kolicinu od originalnog posiljaoca
+                                abBitcakeManager.recordRecordTransaction(transactionMessage.getOriginalSenderInfo().getId(), amountNumber);
+                            }
+                        }
 
                         AppConfig.timestampedStandardPrint("Committing " + pendingMessage);
                         commitedCausalMessageList.add(pendingMessage);

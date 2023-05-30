@@ -46,28 +46,6 @@ public class TransactionHandler implements MessageHandler {
 						//New message for us. Rebroadcast it.
 						AppConfig.timestampedStandardPrint("Rebroadcasting... " + receivedBroadcasts.size());
 
-						//dodaj bitcake-ove i zabelezi u istoriju dobijenih transakcija
-						String amountString = clientMessage.getMessageText();
-
-						int amountNumber = 0;
-						try {
-							amountNumber = Integer.parseInt(amountString);
-						} catch (NumberFormatException e) {
-							AppConfig.timestampedErrorPrint("Couldn't parse amount: " + amountString);
-							return;
-						}
-						bitcakeManager.addSomeBitcakes(amountNumber);
-
-						synchronized (AppConfig.colorLock) {
-
-							if (bitcakeManager instanceof LaiYangBitcakeManager && clientMessage.isWhite()) {
-								LaiYangBitcakeManager lyBitcakeManager = (LaiYangBitcakeManager)bitcakeManager;
-								//zabelezimo u istoriju dobijenih transakcija kolicinu od originalnog posiljaoca
-								lyBitcakeManager.recordGetTransaction(clientMessage.getOriginalSenderInfo().getId(), amountNumber);
-							}
-
-						}
-
 						//rebroadcast-uj svim komsijama
 						for (Integer neighbor : AppConfig.myServentInfo.getNeighbors()) {
 							//Same message, different receiver, and add us to the route table.

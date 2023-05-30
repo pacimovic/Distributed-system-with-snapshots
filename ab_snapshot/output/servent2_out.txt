@@ -1,0 +1,28 @@
+23:09:43 - Starting servent [2|localhost|1300]
+23:09:43 - Pausing for 3000 ms
+23:09:45 - Got message [1|0|1|AB_TOKEN|2]
+23:09:45 - Rebroadcasting... 1
+23:09:45 - Committing [1|0|1|AB_TOKEN|2]
+23:09:46 - Sending message [1|0|1|AB_TOKEN|4]
+23:09:46 - Got message [1|0|1|AB_TOKEN|2]
+23:09:46 - Already had this. No rebroadcast.
+23:09:46 - Sending message [1|0|1|AB_TOKEN|1]
+23:09:46 - Sending message [2|0||AB_TELL|1]
+23:09:46 - Pausing for 7000 ms
+23:09:46 - Committing [2|1|3|TRANSACTION|2]
+23:09:46 - Sending message [1|0|1|AB_TOKEN|0]
+23:09:47 - Sending message [2|1|3|TRANSACTION|4]
+23:09:47 - Got message [1|0|1|AB_TOKEN|2]
+23:09:47 - Already had this. No rebroadcast.
+23:09:48 - Sending message [2|1|3|TRANSACTION|0]
+23:09:48 - Sending message [2|1|3|TRANSACTION|1]
+23:09:48 - Got message [2|1|3|TRANSACTION|2]
+23:09:48 - Got own message back. No rebroadcast.
+23:09:49 - Got message [2|1|3|TRANSACTION|2]
+23:09:49 - Got own message back. No rebroadcast.
+23:09:49 - Got message [2|1|3|TRANSACTION|2]
+23:09:49 - Got own message back. No rebroadcast.
+23:09:53 - Current causal messages:
+23:09:53 - Message 0: 1 from 1
+23:09:53 - Message 1: 3 from 2
+23:09:53 - Stopping...

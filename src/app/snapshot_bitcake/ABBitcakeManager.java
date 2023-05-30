@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BiFunction;
 
 public class ABBitcakeManager implements BitcakeManager{
 
@@ -44,13 +45,14 @@ public class ABBitcakeManager implements BitcakeManager{
             sentHistory.put(servent.getId(), 0);
             recordHistory.put(servent.getId(), 0);
         }
+        CausalBroadcastShared.initializeBitcakeManager(this);
     }
 
     public int recordedAmount = 0;
 
     public void tokenEvent(int collectorId, SnapshotCollector snapshotCollector){
         synchronized (AppConfig.colorLock){
-            AppConfig.isWhite.set(false);
+//            AppConfig.isWhite.set(false);
             recordedAmount = getCurrentBitcakeAmount();
 
             ABSnapshotResult snapshotResult = new ABSnapshotResult(AppConfig.myServentInfo.getId(),
@@ -63,6 +65,7 @@ public class ABBitcakeManager implements BitcakeManager{
             else{
                 //napravi ABTell message i posalji
                 //za sad direktno inicijatoru
+                System.out.println("Ovde ne sme nikad uci!!!!");
                 Message tellMessage = new ABTellMessage(AppConfig.myServentInfo,
                         AppConfig.getInfoById(collectorId), snapshotResult);
 
@@ -75,9 +78,10 @@ public class ABBitcakeManager implements BitcakeManager{
                 myClock.put(entry.getKey(), entry.getValue());
             }
 
-            //Komitujemo poruku kod nas i uvecamo vektorski sat
-            Message tokenMessage = new ABTokenMessage(AppConfig.myServentInfo, null, collectorId, myClock);
+            //Komitujemo token poruku kod nas i uvecamo vektorski sat
+            Message tokenMessage = new ABTokenMessage(AppConfig.myServentInfo, AppConfig.myServentInfo, collectorId, myClock);
             CausalBroadcastShared.commitCausalMessage(tokenMessage);
+
 
             //posalji isti token svima!!!
             for(Integer neighbor : AppConfig.myServentInfo.getNeighbors()) {
@@ -86,6 +90,46 @@ public class ABBitcakeManager implements BitcakeManager{
                 MessageUtil.sendMessage(tokenMessage);
             }
 
+
         }
+    }
+
+    private class MapValueUpdater implements BiFunction<Integer, Integer, Integer> {
+
+        private int valueToAdd;
+
+        public MapValueUpdater(int valueToAdd) {
+            this.valueToAdd = valueToAdd;
+        }
+
+        @Override
+        public Integer apply(Integer key, Integer oldValue) {
+            return oldValue + valueToAdd;
+        }
+    }
+
+    public void recordSentTransaction(int neighbor, int amount){
+        sentHistory.compute(neighbor, new MapValueUpdater(amount));
+    }
+
+    public void recordRecordTransaction(int neighbor, int amount){
+        recordHistory.compute(neighbor, new MapValueUpdater(amount));
+    }
+
+    public List<Message> getSentMessages() {
+        List<Message> toReturn = new CopyOnWriteArrayList<>(sentMessages);
+        return toReturn;
+    }
+
+    public void addSentMessages(Message message){
+        sentMessages.add(message);
+    }
+
+    public Map<Integer, Integer> getSentHistory() {
+        return sentHistory;
+    }
+
+    public Map<Integer, Integer> getRecordHistory() {
+        return recordHistory;
     }
 }
