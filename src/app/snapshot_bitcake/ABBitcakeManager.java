@@ -52,25 +52,12 @@ public class ABBitcakeManager implements BitcakeManager{
 
     public void tokenEvent(int collectorId, SnapshotCollector snapshotCollector){
         synchronized (AppConfig.colorLock){
-//            AppConfig.isWhite.set(false);
-            recordedAmount = getCurrentBitcakeAmount();
 
+            recordedAmount = getCurrentBitcakeAmount();
             ABSnapshotResult snapshotResult = new ABSnapshotResult(AppConfig.myServentInfo.getId(),
                     recordedAmount, getSentHistory(), getRecordHistory());
-
-            if(collectorId == AppConfig.myServentInfo.getId()) {
-                snapshotCollector.addABSnapshotInfo(AppConfig.myServentInfo.getId(),
-                        snapshotResult);
-            }
-            else{
-                //napravi ABTell message i posalji
-                //za sad direktno inicijatoru
-                System.out.println("Ovde ne sme nikad uci!!!!");
-                Message tellMessage = new ABTellMessage(AppConfig.myServentInfo,
-                        AppConfig.getInfoById(collectorId), snapshotResult);
-
-                MessageUtil.sendMessage(tellMessage);
-            }
+            snapshotCollector.addABSnapshotInfo(AppConfig.myServentInfo.getId(),
+                    snapshotResult);
 
             //Svim porukama dajemo nas vektorski sat
             Map<Integer, Integer> myClock = new ConcurrentHashMap<Integer, Integer>();

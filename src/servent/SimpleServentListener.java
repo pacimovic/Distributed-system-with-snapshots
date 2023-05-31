@@ -61,38 +61,13 @@ public class SimpleServentListener implements Runnable, Cancellable {
             try {
                 Message clientMessage;
 
-                if (AppConfig.isWhite.get() == false && redMessages.size() > 0) {
-                    clientMessage = redMessages.remove(0);
-                } else {
-                    /*
-                     * This blocks for up to 1s, after which SocketTimeoutException is thrown.
-                     */
-                    Socket clientSocket = listenerSocket.accept();
+                /*
+                 * This blocks for up to 1s, after which SocketTimeoutException is thrown.
+                 */
+                Socket clientSocket = listenerSocket.accept();
 
-                    //GOT A MESSAGE! <3
-                    clientMessage = MessageUtil.readMessage(clientSocket);
-                }
-                synchronized (AppConfig.colorLock) {
-                    if (AppConfig.SNAPSHOT_TYPE == SnapshotType.LAI_YANG) {
-                        if (clientMessage.isWhite() == false && AppConfig.isWhite.get()) {
-                            /*
-                             * If the message is red, we are white, and the message isn't a marker,
-                             * then store it. We will get the marker soon, and then we will process
-                             * this message. The point is, we need the marker to know who to send
-                             * our info to, so this is the simplest way to work around that.
-                             */
-                            if (clientMessage.getMessageType() != MessageType.LY_MARKER) {
-                                redMessages.add(clientMessage);
-                                continue;
-                            } else {
-                                LaiYangBitcakeManager lyBitcakeManager =
-                                        (LaiYangBitcakeManager)snapshotCollector.getBitcakeManager();
-                                lyBitcakeManager.markerEvent(
-                                        Integer.parseInt(clientMessage.getMessageText()), snapshotCollector);
-                            }
-                        }
-                    }
-                }
+                //GOT A MESSAGE! <3
+                clientMessage = MessageUtil.readMessage(clientSocket);
 
                 MessageHandler messageHandler = new NullHandler(clientMessage);
                 /*
