@@ -56,7 +56,7 @@ public class ABBitcakeManager implements BitcakeManager{
             recordedAmount = getCurrentBitcakeAmount();
 
             ABSnapshotResult snapshotResult = new ABSnapshotResult(AppConfig.myServentInfo.getId(),
-                    recordedAmount, sentHistory, recordHistory);
+                    recordedAmount, getSentHistory(), getRecordHistory());
 
             if(collectorId == AppConfig.myServentInfo.getId()) {
                 snapshotCollector.addABSnapshotInfo(AppConfig.myServentInfo.getId(),
@@ -126,10 +126,12 @@ public class ABBitcakeManager implements BitcakeManager{
     }
 
     public Map<Integer, Integer> getSentHistory() {
-        return sentHistory;
+        Map<Integer, Integer> toReturn = new ConcurrentHashMap<>(sentHistory);
+        return toReturn;
     }
 
     public Map<Integer, Integer> getRecordHistory() {
-        return recordHistory;
+        Map<Integer, Integer> toReturn = new ConcurrentHashMap<>(recordHistory);
+        return toReturn;
     }
 }

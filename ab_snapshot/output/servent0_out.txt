@@ -1,21 +1,68 @@
-23:09:43 - Starting servent [0|localhost|1100]
-23:09:43 - Pausing for 10000 ms
-23:09:45 - Got message [1|0|1|AB_TOKEN|0]
-23:09:45 - Rebroadcasting... 1
-23:09:45 - Committing [1|0|1|AB_TOKEN|0]
-23:09:46 - Sending message [1|0|1|AB_TOKEN|1]
-23:09:46 - Sending message [1|0|1|AB_TOKEN|2]
-23:09:46 - Sending message [0|0||AB_TELL|1]
-23:09:46 - Got message [1|0|1|AB_TOKEN|0]
-23:09:46 - Already had this. No rebroadcast.
-23:09:48 - Got message [2|1|3|TRANSACTION|0]
-23:09:48 - Rebroadcasting... 1
-23:09:48 - Committing [2|1|3|TRANSACTION|0]
-23:09:49 - Sending message [2|1|3|TRANSACTION|1]
-23:09:49 - Sending message [2|1|3|TRANSACTION|2]
-23:09:49 - Got message [2|1|3|TRANSACTION|0]
-23:09:49 - Already had this. No rebroadcast.
-23:09:53 - Current causal messages:
-23:09:53 - Message 0: 1 from 1
-23:09:53 - Message 1: 3 from 2
-23:09:53 - Stopping...
+13:24:58 - Starting servent [0|localhost|1100]
+13:24:58 - Pausing for 10000 ms
+13:24:59 - Committing [0|0|0|AB_TOKEN|0]
+13:25:00 - Sending message [0|0|0|AB_TOKEN|1]
+13:25:00 - Got message [1|1|2|TRANSACTION|0]
+13:25:00 - Rebroadcasting... 1
+13:25:00 - Committing [1|1|2|TRANSACTION|0]
+13:25:00 - Got message [1|2|9|TRANSACTION|0]
+13:25:00 - Rebroadcasting... 2
+13:25:00 - Committing [1|2|9|TRANSACTION|0]
+13:25:00 - Got message [1|5|7|TRANSACTION|0]
+13:25:00 - Rebroadcasting... 3
+13:25:00 - Committing [1|5|7|TRANSACTION|0]
+13:25:00 - Got message [1|6|3|TRANSACTION|0]
+13:25:00 - Rebroadcasting... 4
+13:25:00 - Committing [1|6|3|TRANSACTION|0]
+13:25:01 - Got message [1|4|4|TRANSACTION|0]
+13:25:01 - Rebroadcasting... 5
+13:25:01 - Committing [1|4|4|TRANSACTION|0]
+13:25:01 - Got message [1|8|9|TRANSACTION|0]
+13:25:01 - Rebroadcasting... 6
+13:25:01 - Committing [1|8|9|TRANSACTION|0]
+13:25:01 - Got message [1|3|6|TRANSACTION|0]
+13:25:01 - Rebroadcasting... 7
+13:25:01 - Committing [1|3|6|TRANSACTION|0]
+13:25:01 - Got message [1|0|2|TRANSACTION|0]
+13:25:01 - Rebroadcasting... 8
+13:25:01 - Committing [1|0|2|TRANSACTION|0]
+13:25:01 - Sending message [1|2|9|TRANSACTION|1]
+13:25:01 - Got message [1|7|5|TRANSACTION|0]
+13:25:01 - Rebroadcasting... 9
+13:25:01 - Committing [1|7|5|TRANSACTION|0]
+13:25:01 - Got message [0|0|0|AB_TOKEN|0]
+13:25:01 - Got own message back. No rebroadcast.
+13:25:01 - Sending message [1|1|2|TRANSACTION|1]
+13:25:01 - Got message [1|9||AB_TELL|0]
+13:25:02 - Sending message [1|0|2|TRANSACTION|1]
+13:25:02 - Sending message [1|6|3|TRANSACTION|1]
+13:25:02 - Sending message [1|4|4|TRANSACTION|1]
+13:25:02 - Sending message [1|3|6|TRANSACTION|1]
+13:25:02 - Sending message [1|5|7|TRANSACTION|1]
+13:25:02 - Sending message [1|7|5|TRANSACTION|1]
+13:25:02 - Got message [2|0||AB_TELL|0]
+13:25:02 - Sending message [1|8|9|TRANSACTION|1]
+13:25:03 - Got message [3|0||AB_TELL|0]
+13:25:04 - Got message [4|0||AB_TELL|0]
+13:25:06 - Recorded bitcake amount for 0 = 1000
+13:25:06 - Recorded bitcake amount for 1 = 812
+13:25:06 - Recorded bitcake amount for 2 = 1045
+13:25:06 - Recorded bitcake amount for 3 = 1039
+13:25:06 - Recorded bitcake amount for 4 = 1041
+13:25:06 - Unreceived bitcake amount: 47 from servent 1 to servent 0
+13:25:06 - Unreceived bitcake amount: 2 from servent 1 to servent 2
+13:25:06 - Unreceived bitcake amount: 8 from servent 1 to servent 3
+13:25:06 - Unreceived bitcake amount: 6 from servent 1 to servent 4
+13:25:06 - System bitcake count: 5000
+13:25:08 - Current causal messages:
+13:25:08 - Message [0|0|0|AB_TOKEN|0]: 0 from 0
+13:25:08 - Message [1|1|2|TRANSACTION|0]: 2 from 1
+13:25:08 - Message [1|2|9|TRANSACTION|0]: 9 from 1
+13:25:08 - Message [1|5|7|TRANSACTION|0]: 7 from 1
+13:25:08 - Message [1|6|3|TRANSACTION|0]: 3 from 1
+13:25:08 - Message [1|4|4|TRANSACTION|0]: 4 from 1
+13:25:08 - Message [1|8|9|TRANSACTION|0]: 9 from 1
+13:25:08 - Message [1|3|6|TRANSACTION|0]: 6 from 1
+13:25:08 - Message [1|0|2|TRANSACTION|0]: 2 from 1
+13:25:08 - Message [1|7|5|TRANSACTION|0]: 5 from 1
+13:25:08 - Stopping...

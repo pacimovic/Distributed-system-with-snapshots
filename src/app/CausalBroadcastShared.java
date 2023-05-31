@@ -127,6 +127,9 @@ public class CausalBroadcastShared {
 
                         break;
                     }
+                    else{
+                        System.out.println("Other clock is greater! Please wait...");
+                    }
                 }
             }
         }

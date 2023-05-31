@@ -145,7 +145,6 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 						AppConfig.timestampedStandardPrint(
 								"Recorded bitcake amount for " + nodeResult.getKey() + " = " + nodeResult.getValue().getRecordedAmount());
 					}
-
 					for(int i = 0; i < AppConfig.getServentCount(); i++) {
 						for (int j = 0; j < AppConfig.getServentCount(); j++) {
 							if (i != j) {
@@ -174,15 +173,17 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 				case ACHARYA_BADRINATH:
 					sum = 0;
 					for (Entry<Integer, ABSnapshotResult> nodeResult : collectedABValues.entrySet()) {
+
 						sum += nodeResult.getValue().getRecordedAmount();
 						AppConfig.timestampedStandardPrint(
 								"Recorded bitcake amount for " + nodeResult.getKey() + " = " + nodeResult.getValue().getRecordedAmount());
+//						System.out.println("History for " + nodeResult.getKey() + " = sentHistory: " + nodeResult.getValue().getSentHistory() +
+//								" , recordHistory: " + nodeResult.getValue().getRecordHistory());
 					}
+
 					for(int i = 0; i < AppConfig.getServentCount(); i++) {
 						for (int j = 0; j < AppConfig.getServentCount(); j++) {
 							if (i != j) {
-//								if (AppConfig.getInfoById(i).getNeighbors().contains(j) &&
-//										AppConfig.getInfoById(j).getNeighbors().contains(i)) {
 								int ijAmount = collectedABValues.get(i).getSentHistory().get(j);
 								int jiAmount = collectedABValues.get(j).getRecordHistory().get(i);
 
@@ -190,11 +191,10 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 									String outputString = String.format(
 											"Unreceived bitcake amount: %d from servent %d to servent %d",
 											ijAmount - jiAmount, i, j);
-									System.out.println(j + " recieve history: " + collectedABValues.get(j).getRecordHistory());
+//									System.out.println(j + " recieve history: " + collectedABValues.get(j).getRecordHistory());
 									AppConfig.timestampedStandardPrint(outputString);
 									sum += ijAmount - jiAmount;
 								}
-//								}
 							}
 						}
 					}
@@ -225,8 +225,10 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 	@Override
 	public void addABSnapshotInfo(int id, ABSnapshotResult abSnapshotResult) {
 		collectedABValues.put(id, abSnapshotResult);
+        /*
 		System.out.println(id + ": " + "sent history - " + abSnapshotResult.getSentHistory() +
 				" record history - " + abSnapshotResult.getRecordHistory());
+		 */
 	}
 
 

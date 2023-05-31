@@ -30,6 +30,8 @@ public class DelayedMessageSender implements Runnable {
 		 * A random sleep before sending.
 		 * It is important to take regular naps for health reasons.
 		 */
+		messageToSend.sendEffect();
+
 		try {
 			Thread.sleep((long)(Math.random() * 1000) + 500);
 		} catch (InterruptedException e1) {
@@ -67,7 +69,7 @@ public class DelayedMessageSender implements Runnable {
 				
 				sendSocket.close();
 				
-				messageToSend.sendEffect();
+
 			}
 		} catch (IOException e) {
 			AppConfig.timestampedErrorPrint("Couldn't send message: " + messageToSend.toString());

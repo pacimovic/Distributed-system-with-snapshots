@@ -15,7 +15,7 @@ public class PrintCausalCommand implements CLICommand{
         int i = 0;
         AppConfig.timestampedStandardPrint("Current causal messages:");
         for (Message message: CausalBroadcastShared.getCommitedCausalMessages()) {
-            AppConfig.timestampedStandardPrint("Message " + i + ": " + message.getMessageText() +
+            AppConfig.timestampedStandardPrint("Message " + message + ": " + message.getMessageText() +
                     " from " + message.getOriginalSenderInfo().getId());
             i++;
         }
