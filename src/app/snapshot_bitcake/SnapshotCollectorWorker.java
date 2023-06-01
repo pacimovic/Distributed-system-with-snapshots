@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import app.AppConfig;
@@ -27,6 +28,7 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 	private Map<String, Integer> collectedNaiveValues = new ConcurrentHashMap<>();
 	private Map<Integer, LYSnapshotResult> collectedLYValues = new ConcurrentHashMap<>();
 	private Map<Integer, ABSnapshotResult> collectedABValues = new ConcurrentHashMap<>();
+	private Map<Integer, Message> doneAVMessages = new ConcurrentHashMap<>();
 
 	private SnapshotType snapshotType;
 
@@ -40,6 +42,9 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 				break;
 			case ACHARYA_BADRINATH:
 				bitcakeManager = new ABBitcakeManager();
+				break;
+			case ALAGAR_VENKATESAN:
+				bitcakeManager = new AVBitcakeManager();
 				break;
 			case NONE:
 				AppConfig.timestampedErrorPrint("Making snapshot collector without specifying type. Exiting...");
@@ -87,6 +92,8 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 				case ACHARYA_BADRINATH:
 					((ABBitcakeManager)bitcakeManager).tokenEvent(AppConfig.myServentInfo.getId(), this);
 					break;
+				case ALAGAR_VENKATESAN:
+					((AVBitcakeManager)bitcakeManager).tokenEvent();
 				case NONE:
 					//Shouldn't be able to come here. See constructor.
 					break;
@@ -103,6 +110,11 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 						break;
 					case ACHARYA_BADRINATH:
 						if(collectedABValues.size() == AppConfig.getServentCount()) {
+							waiting = false;
+						}
+						break;
+					case ALAGAR_VENKATESAN:
+						if(doneAVMessages.size() == AppConfig.getServentCount()){
 							waiting = false;
 						}
 						break;
@@ -148,8 +160,7 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 					for(int i = 0; i < AppConfig.getServentCount(); i++) {
 						for (int j = 0; j < AppConfig.getServentCount(); j++) {
 							if (i != j) {
-//								if (AppConfig.getInfoById(i).getNeighbors().contains(j) &&
-//										AppConfig.getInfoById(j).getNeighbors().contains(i)) {
+
 								int ijAmount = collectedLYValues.get(i).getGiveHistory().get(j);
 								int jiAmount = collectedLYValues.get(j).getGetHistory().get(i);
 
@@ -160,7 +171,6 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 									AppConfig.timestampedStandardPrint(outputString);
 									sum += ijAmount - jiAmount;
 								}
-//								}
 							}
 						}
 					}
@@ -180,7 +190,6 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 //						System.out.println("History for " + nodeResult.getKey() + " = sentHistory: " + nodeResult.getValue().getSentHistory() +
 //								" , recordHistory: " + nodeResult.getValue().getRecordHistory());
 					}
-
 					for(int i = 0; i < AppConfig.getServentCount(); i++) {
 						for (int j = 0; j < AppConfig.getServentCount(); j++) {
 							if (i != j) {
@@ -201,6 +210,14 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 					AppConfig.timestampedStandardPrint("System bitcake count: " + sum);
 
 					collectedABValues.clear(); //reset for next invocation
+
+					break;
+				case ALAGAR_VENKATESAN:
+					/*
+					Prestajemo sa snimanjem kanala
+					Broadcastujemo TERMINATE poruku svima
+					Ispisujemo svoje stanje
+					 */
 
 					break;
 				case NONE:
@@ -225,12 +242,12 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 	@Override
 	public void addABSnapshotInfo(int id, ABSnapshotResult abSnapshotResult) {
 		collectedABValues.put(id, abSnapshotResult);
-        /*
-		System.out.println(id + ": " + "sent history - " + abSnapshotResult.getSentHistory() +
-				" record history - " + abSnapshotResult.getRecordHistory());
-		 */
 	}
 
+	@Override
+	public void addAVDoneMessage(int id, Message message){
+		doneAVMessages.put(id, message);
+	}
 
 	@Override
 	public void startCollecting() {

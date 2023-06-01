@@ -68,7 +68,7 @@ public class ABTokenHandler implements MessageHandler {
             }
         }
         else{
-            AppConfig.timestampedErrorPrint("Token handler got: " + clientMessage);
+            AppConfig.timestampedErrorPrint("ABToken handler got: " + clientMessage);
         }
     }
 }

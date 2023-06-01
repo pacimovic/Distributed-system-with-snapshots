@@ -2,10 +2,7 @@ package servent.message;
 
 import app.AppConfig;
 import app.ServentInfo;
-import app.snapshot_bitcake.ABBitcakeManager;
-import app.snapshot_bitcake.BitcakeManager;
-import app.snapshot_bitcake.LYSnapshotResult;
-import app.snapshot_bitcake.LaiYangBitcakeManager;
+import app.snapshot_bitcake.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,9 +50,17 @@ public class TransactionMessage extends BasicMessage {
 		if(getOriginalSenderInfo().getId() != AppConfig.myServentInfo.getId()) return;
 
 		//ako je poruka vec poslata ne oduzimamo opet sebi bitackove od svih servenata!
-		ABBitcakeManager bitcakeManagerSentMessages = (ABBitcakeManager) bitcakeManager;
-		if(bitcakeManagerSentMessages.getSentMessages().contains(this)) return;
-		else bitcakeManagerSentMessages.addSentMessages(this);
+		if(bitcakeManager instanceof  ABBitcakeManager) {
+			ABBitcakeManager bitcakeManagerSentMessages = (ABBitcakeManager) bitcakeManager;
+			if(bitcakeManagerSentMessages.getSentMessages().contains(this)) return;
+			else bitcakeManagerSentMessages.addSentMessages(this);
+		}
+		else if(bitcakeManager instanceof  AVBitcakeManager){
+			AVBitcakeManager bitcakeManagerSentMessages = (AVBitcakeManager) bitcakeManager;
+			if(bitcakeManagerSentMessages.getSentMessages().contains(this)) return;
+			else bitcakeManagerSentMessages.addSentMessages(this);
+		}
+
 
 
         /*
@@ -66,10 +71,16 @@ public class TransactionMessage extends BasicMessage {
 		int amount = Integer.parseInt(getMessageText()) * (AppConfig.getServentCount() - 1);
 		bitcakeManager.takeSomeBitcakes(amount);
 
-		if (bitcakeManager instanceof ABBitcakeManager && isWhite()) {
+		if (bitcakeManager instanceof ABBitcakeManager) {
 			ABBitcakeManager abFinancialManager = (ABBitcakeManager)bitcakeManager;
 			for(ServentInfo servent: AppConfig.getServentInfoList()){
 				abFinancialManager.recordSentTransaction(servent.getId(), Integer.parseInt(getMessageText()));
+			}
+		}
+		else if(bitcakeManager instanceof  AVBitcakeManager){
+			AVBitcakeManager avFinancialManager = (AVBitcakeManager)bitcakeManager;
+			for(ServentInfo servent: AppConfig.getServentInfoList()){
+				avFinancialManager.recordSentTransaction(servent.getId(), Integer.parseInt(getMessageText()));
 			}
 		}
 
