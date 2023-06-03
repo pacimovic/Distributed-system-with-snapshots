@@ -14,8 +14,8 @@ import servent.message.util.MessageUtil;
 
 public class TransactionBurstCommand implements CLICommand {
 
-	private static final int TRANSACTION_COUNT = 1;
-	private static final int BURST_WORKERS = 1;
+	private static final int TRANSACTION_COUNT = 3;
+	private static final int BURST_WORKERS = 3;
 	private static final int MAX_TRANSFER_AMOUNT = 10;
 
 	
@@ -31,20 +31,20 @@ public class TransactionBurstCommand implements CLICommand {
 		public void run() {
 			ThreadLocalRandom rand = ThreadLocalRandom.current();
 
-			//Svim porukama dajemo nas vektorski sat
-			Map<Integer, Integer> myClock = new ConcurrentHashMap<Integer, Integer>();
-			for (Map.Entry<Integer, Integer> entry : CausalBroadcastShared.getVectorClock().entrySet()) {
-				myClock.put(entry.getKey(), entry.getValue());
-			}
 
 			for (int i = 0; i < TRANSACTION_COUNT; i++) {
 
+				int amount = 1 + rand.nextInt(MAX_TRANSFER_AMOUNT);
 
-                int amount = 1 + rand.nextInt(MAX_TRANSFER_AMOUNT);
-                //Komitujemo poruku kod nas i uvecamo vektorski sat
-                Message transactionMessage = new TransactionMessage(
-                        AppConfig.myServentInfo, AppConfig.myServentInfo, amount, bitcakeManager, myClock);
-                CausalBroadcastShared.commitCausalMessage(transactionMessage);
+				Message transactionMessage = null;
+				synchronized (AppConfig.vectorClockLock){
+					Map<Integer, Integer> myClock = new ConcurrentHashMap<Integer, Integer>(CausalBroadcastShared.getVectorClock());
+					//Komitujemo poruku kod nas i uvecamo vektorski sat
+					transactionMessage = new TransactionMessage(
+							AppConfig.myServentInfo, AppConfig.myServentInfo, amount, bitcakeManager, myClock);
+					CausalBroadcastShared.commitCausalMessage(transactionMessage);
+				}
+
 
 				for (int neighbor : AppConfig.myServentInfo.getNeighbors()) {
 					ServentInfo neighborInfo = AppConfig.getInfoById(neighbor);

@@ -78,10 +78,12 @@ public class TransactionMessage extends BasicMessage {
 			}
 		}
 		else if(bitcakeManager instanceof  AVBitcakeManager){
+			/*
 			AVBitcakeManager avFinancialManager = (AVBitcakeManager)bitcakeManager;
 			for(ServentInfo servent: AppConfig.getServentInfoList()){
 				avFinancialManager.recordSentTransaction(servent.getId(), Integer.parseInt(getMessageText()));
 			}
+			 */
 		}
 
 

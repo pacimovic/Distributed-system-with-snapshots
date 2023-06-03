@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import app.AppConfig;
 import app.CausalBroadcastShared;
 import servent.message.Message;
+import servent.message.snapshot.AVTerminateMessage;
 import servent.message.util.MessageUtil;
 
 /**
@@ -93,7 +94,7 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 					((ABBitcakeManager)bitcakeManager).tokenEvent(AppConfig.myServentInfo.getId(), this);
 					break;
 				case ALAGAR_VENKATESAN:
-					((AVBitcakeManager)bitcakeManager).tokenEvent();
+					((AVBitcakeManager)bitcakeManager).tokenEvent(this);
 				case NONE:
 					//Shouldn't be able to come here. See constructor.
 					break;
@@ -213,11 +214,49 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 
 					break;
 				case ALAGAR_VENKATESAN:
-					/*
+                    /*
 					Prestajemo sa snimanjem kanala
 					Broadcastujemo TERMINATE poruku svima
 					Ispisujemo svoje stanje
 					 */
+
+					//prestajemo sa snimanjem
+					AVBitcakeManager avBitcakeManager = (AVBitcakeManager) bitcakeManager;
+					synchronized (AppConfig.snapshotLock){
+						avBitcakeManager.snapshotFlag.getAndSet(false);
+					}
+
+
+					//saljemo svima TERMINATE da ugase snimanje
+					Message terminateMessage = new AVTerminateMessage(AppConfig.myServentInfo, AppConfig.myServentInfo);
+					for(Integer neighbor: AppConfig.myServentInfo.getNeighbors()){
+						MessageUtil.sendMessage(terminateMessage.changeReceiver(neighbor));
+					}
+
+					//ISPIS
+					sum = 0;
+					int myId = AppConfig.myServentInfo.getId();
+					AppConfig.timestampedStandardPrint(
+							"Recorded bitcake amount for " + myId + " = " + avBitcakeManager.snapshotAmount.get());
+					sum += avBitcakeManager.snapshotAmount.get();
+/*
+					for(int i=0; i < AppConfig.getServentCount(); i++){
+						if(i != myId){
+							int myAmount = avBitcakeManager.getSentHistory().get(i);
+							int iAmount = avBitcakeManager.getRecordHistory().get(myId);
+
+							if(myAmount != iAmount){
+								String outputString = String.format(
+										"Unreceived bitcake amount: %d from servent %d to servent %d",
+										myAmount - iAmount, myId, i);
+								AppConfig.timestampedStandardPrint(outputString);
+								sum += myAmount - iAmount;
+							}
+						}
+					}
+
+ */
+					AppConfig.timestampedStandardPrint("System bitcake count: " + sum);
 
 					break;
 				case NONE:

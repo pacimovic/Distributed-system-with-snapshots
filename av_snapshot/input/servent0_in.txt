@@ -1,5 +1,4 @@
-pause 10000
-bitcake_info
-pause 10000
+transaction_burst
+pause 15000
 print_causal
 stop

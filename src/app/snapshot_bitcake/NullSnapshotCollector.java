@@ -1,5 +1,7 @@
 package app.snapshot_bitcake;
 
+import servent.message.Message;
+
 /**
  * This class is used if the user hasn't specified a snapshot type in config.
  * 
@@ -29,6 +31,11 @@ public class NullSnapshotCollector implements SnapshotCollector {
 
 	@Override
 	public void addABSnapshotInfo(int id, ABSnapshotResult abSnapshotResult) {
+
+	}
+
+	@Override
+	public void addAVDoneMessage(int id, Message message) {
 
 	}
 

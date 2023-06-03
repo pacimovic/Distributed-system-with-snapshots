@@ -52,6 +52,9 @@ public class AppConfig {
 
 	public static AtomicBoolean isWhite = new AtomicBoolean(true);
 	public static Object colorLock = new Object();
+	public static Object snapshotLock = new Object();
+
+	public static Object vectorClockLock = new Object();
 
 	/**
 	 * Print a message to stdout with a timestamp
@@ -133,6 +136,9 @@ public class AppConfig {
 				break;
 			case "ab":
 				SNAPSHOT_TYPE = SnapshotType.ACHARYA_BADRINATH;
+				break;
+			case "av":
+				SNAPSHOT_TYPE = SnapshotType.ALAGAR_VENKATESAN;
 				break;
 			default:
 				timestampedErrorPrint("Problem reading snapshot algorithm. Defaulting to NONE.");

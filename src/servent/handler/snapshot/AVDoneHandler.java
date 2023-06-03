@@ -22,6 +22,7 @@ public class AVDoneHandler implements MessageHandler {
             /*
             Ubacujemo DONE poruku u mapu snapshotCollectora
              */
+            snapshotCollector.addAVDoneMessage(clientMessage.getOriginalSenderInfo().getId(), clientMessage);
         }
         else{
             AppConfig.timestampedErrorPrint("Done handler got: " + clientMessage);

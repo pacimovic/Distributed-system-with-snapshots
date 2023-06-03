@@ -1,438 +1,93 @@
-14:29:03 - Starting servent [2|localhost|1300]
-14:29:04 - Pausing for 20000 ms
-14:29:04 - Got message [1|9|6|TRANSACTION|2]
-14:29:04 - Rebroadcasting... 1
-14:29:04 - Got message [1|3|8|TRANSACTION|2]
-14:29:04 - Rebroadcasting... 2
-14:29:04 - Committing [1|9|6|TRANSACTION|2]
-14:29:04 - Committing [1|3|8|TRANSACTION|2]
-14:29:04 - Got message [1|8|9|TRANSACTION|2]
-14:29:04 - Rebroadcasting... 3
-14:29:04 - Committing [1|8|9|TRANSACTION|2]
-14:29:05 - Got message [1|4|6|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 4
-14:29:05 - Committing [1|4|6|TRANSACTION|2]
-14:29:05 - Got message [1|2|7|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 5
-14:29:05 - Committing [1|2|7|TRANSACTION|2]
-14:29:05 - Got message [1|10|1|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 6
-14:29:05 - Committing [1|10|1|TRANSACTION|2]
-14:29:05 - Got message [1|13|9|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 7
-14:29:05 - Committing [1|13|9|TRANSACTION|2]
-14:29:05 - Got message [1|11|7|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 8
-14:29:05 - Committing [1|11|7|TRANSACTION|2]
-14:29:05 - Got message [1|14|10|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 9
-14:29:05 - Committing [1|14|10|TRANSACTION|2]
-14:29:05 - Got message [1|5|4|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 10
-14:29:05 - Got message [1|7|8|TRANSACTION|2]
-14:29:05 - Committing [1|5|4|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 11
-14:29:05 - Committing [1|7|8|TRANSACTION|2]
-14:29:05 - Got message [1|6|10|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 12
-14:29:05 - Committing [1|6|10|TRANSACTION|2]
-14:29:05 - Got message [1|0|2|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 13
-14:29:05 - Committing [1|0|2|TRANSACTION|2]
-14:29:05 - Got message [1|1|10|TRANSACTION|2]
-14:29:05 - Rebroadcasting... 14
-14:29:05 - Committing [1|1|10|TRANSACTION|2]
-14:29:05 - Sending message [1|2|7|TRANSACTION|4]
-14:29:05 - Sending message [1|8|9|TRANSACTION|0]
-14:29:05 - Got message [1|12|7|TRANSACTION|2]
-14:29:05 - Sending message [1|3|8|TRANSACTION|4]
-14:29:05 - Sending message [1|4|6|TRANSACTION|0]
-14:29:05 - Sending message [1|8|9|TRANSACTION|1]
-14:29:05 - Rebroadcasting... 15
-14:29:05 - Committing [1|12|7|TRANSACTION|2]
-14:29:05 - Sending message [1|10|1|TRANSACTION|0]
-14:29:05 - Got message [1|9|6|TRANSACTION|2]
-14:29:05 - Already had this. No rebroadcast.
-14:29:05 - Got message [1|12|7|TRANSACTION|2]
-14:29:05 - Already had this. No rebroadcast.
-14:29:05 - Sending message [1|14|10|TRANSACTION|0]
-14:29:05 - Got message [1|11|7|TRANSACTION|2]
-14:29:05 - Sending message [1|10|1|TRANSACTION|4]
-14:29:05 - Already had this. No rebroadcast.
-14:29:05 - Got message [1|5|4|TRANSACTION|2]
-14:29:05 - Already had this. No rebroadcast.
-14:29:05 - Sending message [1|14|10|TRANSACTION|1]
-14:29:06 - Got message [1|10|1|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Got message [1|7|8|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Sending message [1|5|4|TRANSACTION|4]
-14:29:06 - Sending message [1|4|6|TRANSACTION|1]
-14:29:06 - Sending message [1|11|7|TRANSACTION|0]
-14:29:06 - Sending message [1|6|10|TRANSACTION|1]
-14:29:06 - Got message [1|3|8|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Sending message [1|0|2|TRANSACTION|1]
-14:29:06 - Sending message [1|0|2|TRANSACTION|0]
-14:29:06 - Sending message [1|8|9|TRANSACTION|4]
-14:29:06 - Sending message [1|10|1|TRANSACTION|1]
-14:29:06 - Sending message [1|9|6|TRANSACTION|1]
-14:29:06 - Sending message [1|6|10|TRANSACTION|0]
-14:29:06 - Sending message [1|13|9|TRANSACTION|0]
-14:29:06 - Got message [1|8|9|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Got message [1|2|7|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Sending message [1|13|9|TRANSACTION|1]
-14:29:06 - Got message [1|1|10|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Sending message [1|7|8|TRANSACTION|1]
-14:29:06 - Sending message [1|2|7|TRANSACTION|0]
-14:29:06 - Sending message [1|11|7|TRANSACTION|4]
-14:29:06 - Sending message [1|1|10|TRANSACTION|0]
-14:29:06 - Sending message [1|3|8|TRANSACTION|0]
-14:29:06 - Sending message [1|7|8|TRANSACTION|0]
-14:29:06 - Sending message [1|3|8|TRANSACTION|1]
-14:29:06 - Sending message [1|6|10|TRANSACTION|4]
-14:29:06 - Sending message [1|14|10|TRANSACTION|4]
-14:29:06 - Sending message [1|9|6|TRANSACTION|0]
-14:29:06 - Sending message [1|9|6|TRANSACTION|4]
-14:29:06 - Got message [1|13|9|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Sending message [1|5|4|TRANSACTION|0]
-14:29:06 - Got message [1|0|2|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Sending message [1|4|6|TRANSACTION|4]
-14:29:06 - Sending message [1|0|2|TRANSACTION|4]
-14:29:06 - Sending message [1|12|7|TRANSACTION|1]
-14:29:06 - Sending message [1|5|4|TRANSACTION|1]
-14:29:06 - Sending message [1|2|7|TRANSACTION|1]
-14:29:06 - Sending message [1|13|9|TRANSACTION|4]
-14:29:06 - Got message [1|6|10|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Sending message [1|12|7|TRANSACTION|4]
-14:29:06 - Sending message [1|11|7|TRANSACTION|1]
-14:29:06 - Sending message [1|1|10|TRANSACTION|4]
-14:29:06 - Got message [1|4|6|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Sending message [1|1|10|TRANSACTION|1]
-14:29:06 - Got message [1|14|10|TRANSACTION|2]
-14:29:06 - Sending message [1|7|8|TRANSACTION|4]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Got message [1|2|7|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Got message [1|9|6|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Got message [1|11|7|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:06 - Got message [1|10|1|TRANSACTION|2]
-14:29:06 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|5|4|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|3|8|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Sending message [1|12|7|TRANSACTION|0]
-14:29:07 - Got message [1|8|9|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|7|8|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|13|9|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|12|7|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|0|2|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|1|10|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|6|10|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|4|6|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:07 - Got message [1|14|10|TRANSACTION|2]
-14:29:07 - Already had this. No rebroadcast.
-14:29:09 - Got message [4|8|7|TRANSACTION|2]
-14:29:09 - Rebroadcasting... 16
-Other clock is greater! Please wait...
-14:29:09 - Got message [4|1|5|TRANSACTION|2]
-14:29:09 - Rebroadcasting... 17
-Other clock is greater! Please wait...
-14:29:09 - Committing [4|1|5|TRANSACTION|2]
-Other clock is greater! Please wait...
-14:29:09 - Got message [4|7|2|TRANSACTION|2]
-14:29:09 - Rebroadcasting... 18
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:09 - Got message [4|0|4|TRANSACTION|2]
-14:29:09 - Rebroadcasting... 19
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:09 - Committing [4|0|4|TRANSACTION|2]
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:09 - Got message [4|5|2|TRANSACTION|2]
-14:29:09 - Rebroadcasting... 20
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Got message [4|9|1|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 21
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Got message [4|14|10|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 22
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Got message [4|11|6|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 23
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Got message [4|10|8|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 24
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Got message [4|4|2|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 25
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Committing [4|4|2|TRANSACTION|2]
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Got message [4|6|3|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 26
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Got message [4|12|8|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 27
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Got message [4|3|9|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 28
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Committing [4|3|9|TRANSACTION|2]
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Got message [4|2|3|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 29
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-Other clock is greater! Please wait...
-14:29:10 - Committing [4|2|3|TRANSACTION|2]
-14:29:10 - Committing [4|8|7|TRANSACTION|2]
-14:29:10 - Committing [4|7|2|TRANSACTION|2]
-14:29:10 - Committing [4|5|2|TRANSACTION|2]
-14:29:10 - Committing [4|9|1|TRANSACTION|2]
-14:29:10 - Committing [4|14|10|TRANSACTION|2]
-14:29:10 - Committing [4|11|6|TRANSACTION|2]
-14:29:10 - Committing [4|10|8|TRANSACTION|2]
-14:29:10 - Committing [4|6|3|TRANSACTION|2]
-14:29:10 - Committing [4|12|8|TRANSACTION|2]
-14:29:10 - Sending message [4|1|5|TRANSACTION|0]
-14:29:10 - Sending message [4|1|5|TRANSACTION|4]
-14:29:10 - Sending message [4|5|2|TRANSACTION|1]
-14:29:10 - Sending message [4|5|2|TRANSACTION|0]
-14:29:10 - Got message [4|13|1|TRANSACTION|2]
-14:29:10 - Rebroadcasting... 30
-14:29:10 - Committing [4|13|1|TRANSACTION|2]
-14:29:10 - Sending message [4|11|6|TRANSACTION|0]
-14:29:10 - Sending message [4|8|7|TRANSACTION|0]
-14:29:10 - Sending message [4|10|8|TRANSACTION|0]
-14:29:10 - Sending message [4|9|1|TRANSACTION|1]
-14:29:10 - Sending message [4|9|1|TRANSACTION|0]
-14:29:11 - Sending message [4|0|4|TRANSACTION|4]
-14:29:11 - Sending message [4|5|2|TRANSACTION|4]
-14:29:11 - Sending message [4|0|4|TRANSACTION|0]
-14:29:11 - Sending message [4|7|2|TRANSACTION|4]
-14:29:11 - Sending message [4|9|1|TRANSACTION|4]
-14:29:11 - Sending message [4|1|5|TRANSACTION|1]
-14:29:11 - Sending message [4|4|2|TRANSACTION|1]
-14:29:11 - Sending message [4|7|2|TRANSACTION|0]
-14:29:11 - Sending message [4|8|7|TRANSACTION|1]
-14:29:11 - Sending message [4|14|10|TRANSACTION|1]
-14:29:11 - Sending message [4|10|8|TRANSACTION|1]
-14:29:11 - Sending message [4|4|2|TRANSACTION|4]
-14:29:11 - Sending message [4|6|3|TRANSACTION|4]
-14:29:11 - Sending message [4|6|3|TRANSACTION|1]
-14:29:11 - Sending message [4|7|2|TRANSACTION|1]
-14:29:11 - Sending message [4|8|7|TRANSACTION|4]
-14:29:11 - Sending message [4|6|3|TRANSACTION|0]
-14:29:11 - Sending message [4|0|4|TRANSACTION|1]
-14:29:11 - Sending message [4|12|8|TRANSACTION|1]
-14:29:11 - Sending message [4|2|3|TRANSACTION|0]
-14:29:11 - Sending message [4|14|10|TRANSACTION|0]
-14:29:11 - Sending message [4|3|9|TRANSACTION|0]
-14:29:11 - Got message [4|5|2|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Sending message [4|11|6|TRANSACTION|4]
-14:29:11 - Got message [4|5|2|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Sending message [4|14|10|TRANSACTION|4]
-14:29:11 - Sending message [4|12|8|TRANSACTION|0]
-14:29:11 - Got message [4|10|8|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Got message [4|9|1|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Sending message [4|10|8|TRANSACTION|4]
-14:29:11 - Sending message [4|11|6|TRANSACTION|1]
-14:29:11 - Got message [4|10|8|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Sending message [4|13|1|TRANSACTION|4]
-14:29:11 - Sending message [4|13|1|TRANSACTION|0]
-14:29:11 - Sending message [4|3|9|TRANSACTION|1]
-14:29:11 - Got message [4|7|2|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Sending message [4|4|2|TRANSACTION|0]
-14:29:11 - Sending message [4|12|8|TRANSACTION|4]
-14:29:11 - Got message [4|1|5|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Got message [4|4|2|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Got message [4|8|7|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Got message [4|8|7|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Got message [4|0|4|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Sending message [4|2|3|TRANSACTION|4]
-14:29:11 - Sending message [4|2|3|TRANSACTION|1]
-14:29:11 - Got message [4|6|3|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Got message [4|2|3|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:11 - Sending message [4|3|9|TRANSACTION|4]
-14:29:11 - Got message [4|14|10|TRANSACTION|2]
-14:29:11 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|2|3|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Sending message [4|13|1|TRANSACTION|1]
-14:29:12 - Got message [4|14|10|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|11|6|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|6|3|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|12|8|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|13|1|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|7|2|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|9|1|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|11|6|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|3|9|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|0|4|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|3|9|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|1|5|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|4|2|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|13|1|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:12 - Got message [4|12|8|TRANSACTION|2]
-14:29:12 - Already had this. No rebroadcast.
-14:29:16 - Got message [0|0|0|AB_TOKEN|2]
-14:29:16 - Rebroadcasting... 1
-14:29:16 - Committing [0|0|0|AB_TOKEN|2]
-14:29:16 - Got message [0|0|0|AB_TOKEN|2]
-14:29:16 - Already had this. No rebroadcast.
-14:29:16 - Sending message [0|0|0|AB_TOKEN|4]
-14:29:17 - Sending message [0|0|0|AB_TOKEN|0]
-14:29:17 - Sending message [2|0||AB_TELL|0]
-14:29:17 - Sending message [0|0|0|AB_TOKEN|1]
-14:29:18 - Got message [0|0|0|AB_TOKEN|2]
-14:29:18 - Already had this. No rebroadcast.
-14:29:24 - Current causal messages:
-14:29:24 - Message [1|9|6|TRANSACTION|2]: 6 from 1
-14:29:24 - Message [1|3|8|TRANSACTION|2]: 8 from 1
-14:29:24 - Message [1|8|9|TRANSACTION|2]: 9 from 1
-14:29:24 - Message [1|4|6|TRANSACTION|2]: 6 from 1
-14:29:24 - Message [1|2|7|TRANSACTION|2]: 7 from 1
-14:29:24 - Message [1|10|1|TRANSACTION|2]: 1 from 1
-14:29:24 - Message [1|13|9|TRANSACTION|2]: 9 from 1
-14:29:24 - Message [1|11|7|TRANSACTION|2]: 7 from 1
-14:29:24 - Message [1|14|10|TRANSACTION|2]: 10 from 1
-14:29:24 - Message [1|5|4|TRANSACTION|2]: 4 from 1
-14:29:24 - Message [1|7|8|TRANSACTION|2]: 8 from 1
-14:29:24 - Message [1|6|10|TRANSACTION|2]: 10 from 1
-14:29:24 - Message [1|0|2|TRANSACTION|2]: 2 from 1
-14:29:24 - Message [1|1|10|TRANSACTION|2]: 10 from 1
-14:29:24 - Message [1|12|7|TRANSACTION|2]: 7 from 1
-14:29:24 - Message [4|1|5|TRANSACTION|2]: 5 from 4
-14:29:24 - Message [4|0|4|TRANSACTION|2]: 4 from 4
-14:29:24 - Message [4|4|2|TRANSACTION|2]: 2 from 4
-14:29:24 - Message [4|3|9|TRANSACTION|2]: 9 from 4
-14:29:24 - Message [4|2|3|TRANSACTION|2]: 3 from 4
-14:29:24 - Message [4|8|7|TRANSACTION|2]: 7 from 4
-14:29:24 - Message [4|7|2|TRANSACTION|2]: 2 from 4
-14:29:24 - Message [4|5|2|TRANSACTION|2]: 2 from 4
-14:29:24 - Message [4|9|1|TRANSACTION|2]: 1 from 4
-14:29:24 - Message [4|14|10|TRANSACTION|2]: 10 from 4
-14:29:24 - Message [4|11|6|TRANSACTION|2]: 6 from 4
-14:29:24 - Message [4|10|8|TRANSACTION|2]: 8 from 4
-14:29:24 - Message [4|6|3|TRANSACTION|2]: 3 from 4
-14:29:24 - Message [4|12|8|TRANSACTION|2]: 8 from 4
-14:29:24 - Message [4|13|1|TRANSACTION|2]: 1 from 4
-14:29:24 - Message [0|0|0|AB_TOKEN|2]: 0 from 0
-14:29:24 - Stopping...
+20:36:46 - Starting servent [2|localhost|1300]
+20:36:46 - Pausing for 15000 ms
+20:36:47 - Got message [0|5|1|TRANSACTION|2]
+20:36:47 - Rebroadcasting... 1
+20:36:48 - Got message [0|7|7|TRANSACTION|2]
+20:36:48 - Rebroadcasting... 2
+20:36:48 - Got message [0|6|3|TRANSACTION|2]
+20:36:48 - Rebroadcasting... 3
+20:36:48 - Got message [0|1|5|TRANSACTION|2]
+20:36:48 - Rebroadcasting... 4
+20:36:48 - Got message [0|0|9|TRANSACTION|2]
+20:36:48 - Rebroadcasting... 5
+20:36:48 - Got message [0|2|2|TRANSACTION|2]
+20:36:48 - Rebroadcasting... 6
+20:36:48 - Committing [0|0|9|TRANSACTION|2]
+20:36:48 - Committing [0|1|5|TRANSACTION|2]
+20:36:48 - Committing [0|2|2|TRANSACTION|2]
+20:36:48 - Sending message [0|5|1|TRANSACTION|3]
+20:36:48 - Got message [0|3|7|TRANSACTION|2]
+20:36:48 - Rebroadcasting... 7
+20:36:48 - Committing [0|3|7|TRANSACTION|2]
+20:36:48 - Got message [0|4|5|TRANSACTION|2]
+20:36:48 - Rebroadcasting... 8
+20:36:48 - Committing [0|4|5|TRANSACTION|2]
+20:36:48 - Committing [0|5|1|TRANSACTION|2]
+20:36:48 - Committing [0|6|3|TRANSACTION|2]
+20:36:48 - Committing [0|7|7|TRANSACTION|2]
+20:36:48 - Sending message [0|1|5|TRANSACTION|3]
+20:36:48 - Got message [0|8|9|TRANSACTION|2]
+20:36:48 - Rebroadcasting... 9
+20:36:48 - Committing [0|8|9|TRANSACTION|2]
+20:36:48 - Sending message [0|7|7|TRANSACTION|1]
+20:36:48 - Sending message [0|1|5|TRANSACTION|1]
+20:36:48 - Sending message [0|6|3|TRANSACTION|1]
+20:36:48 - Sending message [0|5|1|TRANSACTION|1]
+20:36:49 - Sending message [0|0|9|TRANSACTION|3]
+20:36:49 - Sending message [0|6|3|TRANSACTION|3]
+20:36:49 - Sending message [0|2|2|TRANSACTION|3]
+20:36:49 - Sending message [0|0|9|TRANSACTION|1]
+20:36:49 - Sending message [0|2|2|TRANSACTION|1]
+20:36:49 - Sending message [0|7|7|TRANSACTION|3]
+20:36:49 - Sending message [0|4|5|TRANSACTION|3]
+20:36:49 - Sending message [0|3|7|TRANSACTION|3]
+20:36:49 - Got message [0|1|5|TRANSACTION|2]
+20:36:49 - Already had this. No rebroadcast.
+20:36:49 - Sending message [0|3|7|TRANSACTION|1]
+20:36:49 - Got message [0|5|1|TRANSACTION|2]
+20:36:49 - Already had this. No rebroadcast.
+20:36:49 - Got message [1|1|1|AV_TOKEN|2]
+20:36:49 - Rebroadcasting... 1
+20:36:49 - Sending message [0|8|9|TRANSACTION|1]
+20:36:49 - Committing [1|1|1|AV_TOKEN|2]
+20:36:49 - Got message [0|0|9|TRANSACTION|2]
+20:36:49 - Already had this. No rebroadcast.
+20:36:50 - Sending message [0|4|5|TRANSACTION|1]
+20:36:50 - Sending message [0|8|9|TRANSACTION|3]
+20:36:50 - Got message [0|4|5|TRANSACTION|2]
+20:36:50 - Already had this. No rebroadcast.
+20:36:50 - Got message [0|3|7|TRANSACTION|2]
+20:36:50 - Already had this. No rebroadcast.
+20:36:50 - Got message [0|2|2|TRANSACTION|2]
+20:36:50 - Already had this. No rebroadcast.
+20:36:50 - Got message [0|6|3|TRANSACTION|2]
+20:36:50 - Already had this. No rebroadcast.
+20:36:50 - Got message [0|7|7|TRANSACTION|2]
+20:36:50 - Already had this. No rebroadcast.
+20:36:51 - Sending message [1|1|1|AV_TOKEN|3]
+20:36:51 - Sending message [1|1|1|AV_TOKEN|1]
+20:36:51 - Sending message [2|0||AV_DONE|1]
+20:36:51 - Got message [0|8|9|TRANSACTION|2]
+20:36:51 - Already had this. No rebroadcast.
+20:36:52 - Got message [1|1|1|AV_TOKEN|2]
+20:36:52 - Already had this. No rebroadcast.
+20:36:55 - Got message [1|2||AV_TERMINATE|2]
+20:36:55 - Rebroadcasting... 1
+20:36:55 - Recorded bitcake amount for 2 = 1048
+20:36:55 - System bitcake count: 1048
+20:36:56 - Sending message [1|2||AV_TERMINATE|1]
+20:36:57 - Sending message [1|2||AV_TERMINATE|3]
+20:36:58 - Got message [1|2||AV_TERMINATE|2]
+20:36:58 - Already had this. No rebroadcast.
+20:37:01 - Current causal messages:
+20:37:01 - Message [0|0|9|TRANSACTION|2]: 9 from 0
+20:37:01 - Message [0|1|5|TRANSACTION|2]: 5 from 0
+20:37:01 - Message [0|2|2|TRANSACTION|2]: 2 from 0
+20:37:01 - Message [0|3|7|TRANSACTION|2]: 7 from 0
+20:37:01 - Message [0|4|5|TRANSACTION|2]: 5 from 0
+20:37:01 - Message [0|5|1|TRANSACTION|2]: 1 from 0
+20:37:01 - Message [0|6|3|TRANSACTION|2]: 3 from 0
+20:37:01 - Message [0|7|7|TRANSACTION|2]: 7 from 0
+20:37:01 - Message [0|8|9|TRANSACTION|2]: 9 from 0
+20:37:01 - Message [1|1|1|AV_TOKEN|2]: 1 from 1
+20:37:01 - Stopping...
