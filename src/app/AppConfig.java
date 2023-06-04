@@ -53,8 +53,8 @@ public class AppConfig {
 	public static AtomicBoolean isWhite = new AtomicBoolean(true);
 	public static Object colorLock = new Object();
 	public static Object snapshotLock = new Object();
-
 	public static Object vectorClockLock = new Object();
+	public static Object sentMessagesLock = new Object();
 
 	/**
 	 * Print a message to stdout with a timestamp

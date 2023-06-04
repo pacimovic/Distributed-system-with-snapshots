@@ -64,6 +64,13 @@ public class CausalBroadcastShared {
         if(msg.getMessageType() == MessageType.AV_TOKEN){
             AVTokenMessage avTokenMessage = (AVTokenMessage) msg;
             vectorClockCopy = new ConcurrentHashMap<>(avTokenMessage.getSenderVectorClock());
+
+            vectorClockCopy.computeIfPresent(avTokenMessage.getOriginalSenderInfo().getId(), new BiFunction<Integer, Integer, Integer>() {
+                @Override
+                public Integer apply(Integer key, Integer oldValue) {
+                    return oldValue+1;
+                }
+            });
         }
     }
 
@@ -73,9 +80,16 @@ public class CausalBroadcastShared {
         incrementClock(newMessage.getOriginalSenderInfo().getId());
 
         if(newMessage.getMessageType() == MessageType.AV_TOKEN){
-            //napravi kopiju casovnika te poruke
+            //napravi kopiju casovnika te poruke i uvecaj za 1
             AVTokenMessage avTokenMessage = (AVTokenMessage) newMessage;
             vectorClockCopy = new ConcurrentHashMap<>(avTokenMessage.getSenderVectorClock());
+
+            vectorClockCopy.computeIfPresent(avTokenMessage.getOriginalSenderInfo().getId(), new BiFunction<Integer, Integer, Integer>() {
+                @Override
+                public Integer apply(Integer key, Integer oldValue) {
+                    return oldValue+1;
+                }
+            });
         }
 
         checkPendingMessages();

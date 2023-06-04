@@ -1,97 +1,157 @@
-20:36:46 - Starting servent [1|localhost|1200]
-20:36:46 - Pausing for 1000 ms
-20:36:47 - Got message [0|5|1|TRANSACTION|1]
-20:36:47 - Rebroadcasting... 1
-20:36:47 - Got message [0|0|9|TRANSACTION|1]
-20:36:47 - Rebroadcasting... 2
-20:36:47 - Committing [0|0|9|TRANSACTION|1]
-20:36:47 - Got message [0|6|3|TRANSACTION|1]
-20:36:47 - Rebroadcasting... 3
-20:36:47 - Got message [0|1|5|TRANSACTION|1]
-20:36:47 - Rebroadcasting... 4
-20:36:47 - Committing [0|1|5|TRANSACTION|1]
-20:36:47 - Got message [0|7|7|TRANSACTION|1]
-20:36:47 - Rebroadcasting... 5
-20:36:47 - Pausing for 15000 ms
-20:36:47 - Got message [0|4|5|TRANSACTION|1]
-20:36:47 - Rebroadcasting... 6
-20:36:47 - Got message [0|2|2|TRANSACTION|1]
-20:36:47 - Rebroadcasting... 7
-20:36:47 - Committing [0|2|2|TRANSACTION|1]
-20:36:47 - Sending message [0|5|1|TRANSACTION|2]
-20:36:47 - Got message [0|3|7|TRANSACTION|1]
-20:36:47 - Rebroadcasting... 8
-20:36:47 - Committing [0|3|7|TRANSACTION|1]
-20:36:47 - Committing [0|4|5|TRANSACTION|1]
-20:36:47 - Committing [0|5|1|TRANSACTION|1]
-20:36:47 - Committing [0|6|3|TRANSACTION|1]
-20:36:47 - Committing [0|7|7|TRANSACTION|1]
-20:36:47 - Sending message [0|6|3|TRANSACTION|0]
-20:36:48 - Sending message [0|7|7|TRANSACTION|2]
-20:36:48 - Sending message [0|6|3|TRANSACTION|2]
-20:36:48 - Sending message [0|7|7|TRANSACTION|0]
-20:36:48 - Got message [0|8|9|TRANSACTION|1]
-20:36:48 - Rebroadcasting... 9
-20:36:48 - Committing [0|8|9|TRANSACTION|1]
-20:36:48 - Sending message [0|1|5|TRANSACTION|2]
-20:36:48 - Sending message [0|0|9|TRANSACTION|2]
-20:36:48 - Sending message [0|2|2|TRANSACTION|2]
-20:36:48 - Sending message [0|3|7|TRANSACTION|2]
-20:36:48 - Sending message [0|2|2|TRANSACTION|0]
-20:36:48 - Committing [1|1|1|AV_TOKEN|1]
-20:36:48 - Sending message [0|4|5|TRANSACTION|2]
-20:36:48 - Sending message [0|0|9|TRANSACTION|0]
-20:36:48 - Sending message [0|8|9|TRANSACTION|2]
-20:36:48 - Sending message [0|5|1|TRANSACTION|0]
-20:36:48 - Sending message [0|1|5|TRANSACTION|0]
-20:36:48 - Got message [0|7|7|TRANSACTION|1]
-20:36:48 - Already had this. No rebroadcast.
-20:36:48 - Got message [0|1|5|TRANSACTION|1]
-20:36:48 - Already had this. No rebroadcast.
-20:36:48 - Sending message [0|4|5|TRANSACTION|0]
-20:36:48 - Got message [0|6|3|TRANSACTION|1]
-20:36:48 - Already had this. No rebroadcast.
-20:36:48 - Got message [0|5|1|TRANSACTION|1]
-20:36:48 - Already had this. No rebroadcast.
-20:36:49 - Sending message [0|3|7|TRANSACTION|0]
-20:36:49 - Sending message [0|8|9|TRANSACTION|0]
-20:36:49 - Got message [0|0|9|TRANSACTION|1]
-20:36:49 - Already had this. No rebroadcast.
-20:36:49 - Got message [0|2|2|TRANSACTION|1]
-20:36:49 - Already had this. No rebroadcast.
-20:36:49 - Sending message [1|1|1|AV_TOKEN|0]
-20:36:49 - Got message [0|3|7|TRANSACTION|1]
-20:36:49 - Already had this. No rebroadcast.
-20:36:49 - Sending message [1|1|1|AV_TOKEN|2]
-20:36:49 - Got message [0|8|9|TRANSACTION|1]
-20:36:49 - Already had this. No rebroadcast.
-20:36:50 - Got message [0|4|5|TRANSACTION|1]
-20:36:50 - Already had this. No rebroadcast.
-20:36:50 - Got message [1|1|1|AV_TOKEN|1]
-20:36:50 - Got own message back. No rebroadcast.
-20:36:50 - Got message [0|9||AV_DONE|1]
-20:36:51 - Got message [1|1|1|AV_TOKEN|1]
-20:36:51 - Got own message back. No rebroadcast.
-20:36:51 - Got message [2|0||AV_DONE|1]
-20:36:52 - Got message [4|0||AV_DONE|1]
-20:36:52 - Got message [3|0||AV_DONE|1]
-20:36:54 - Recorded bitcake amount for 1 = 1048
-20:36:54 - System bitcake count: 1048
-20:36:55 - Sending message [1|2||AV_TERMINATE|0]
-20:36:55 - Sending message [1|2||AV_TERMINATE|2]
-20:36:56 - Got message [1|2||AV_TERMINATE|1]
-20:36:56 - Got own message back. No rebroadcast.
-20:36:56 - Got message [1|2||AV_TERMINATE|1]
-20:36:56 - Got own message back. No rebroadcast.
-20:37:02 - Current causal messages:
-20:37:02 - Message [0|0|9|TRANSACTION|1]: 9 from 0
-20:37:02 - Message [0|1|5|TRANSACTION|1]: 5 from 0
-20:37:02 - Message [0|2|2|TRANSACTION|1]: 2 from 0
-20:37:02 - Message [0|3|7|TRANSACTION|1]: 7 from 0
-20:37:02 - Message [0|4|5|TRANSACTION|1]: 5 from 0
-20:37:02 - Message [0|5|1|TRANSACTION|1]: 1 from 0
-20:37:02 - Message [0|6|3|TRANSACTION|1]: 3 from 0
-20:37:02 - Message [0|7|7|TRANSACTION|1]: 7 from 0
-20:37:02 - Message [0|8|9|TRANSACTION|1]: 9 from 0
-20:37:02 - Message [1|1|1|AV_TOKEN|1]: 1 from 1
-20:37:02 - Stopping...
+17:00:43 - Starting servent [1|localhost|1200]
+17:00:43 - Pausing for 15000 ms
+17:00:44 - Got message [2|5|8|TRANSACTION|1]
+17:00:44 - Rebroadcasting... 1
+17:00:44 - Got message [2|4|6|TRANSACTION|1]
+17:00:44 - Rebroadcasting... 2
+17:00:44 - Got message [2|0|8|TRANSACTION|1]
+17:00:44 - Rebroadcasting... 3
+17:00:44 - Committing [2|0|8|TRANSACTION|1]
+17:00:44 - Got message [2|6|7|TRANSACTION|1]
+17:00:44 - Rebroadcasting... 4
+17:00:44 - Got message [2|1|5|TRANSACTION|1]
+17:00:44 - Rebroadcasting... 5
+17:00:44 - Committing [2|1|5|TRANSACTION|1]
+17:00:44 - Got message [2|7|10|TRANSACTION|1]
+17:00:44 - Rebroadcasting... 6
+17:00:45 - Got message [2|3|9|TRANSACTION|1]
+17:00:45 - Rebroadcasting... 7
+17:00:45 - Got message [2|2|3|TRANSACTION|1]
+17:00:45 - Rebroadcasting... 8
+17:00:45 - Committing [2|2|3|TRANSACTION|1]
+17:00:45 - Committing [2|3|9|TRANSACTION|1]
+17:00:45 - Committing [2|4|6|TRANSACTION|1]
+17:00:45 - Committing [2|5|8|TRANSACTION|1]
+17:00:45 - Committing [2|6|7|TRANSACTION|1]
+17:00:45 - Committing [2|7|10|TRANSACTION|1]
+17:00:45 - Sending message [2|5|8|TRANSACTION|0]
+17:00:45 - Sending message [2|4|6|TRANSACTION|2]
+17:00:45 - Got message [2|11|4|TRANSACTION|1]
+17:00:45 - Rebroadcasting... 9
+17:00:45 - Got message [2|12|10|TRANSACTION|1]
+17:00:45 - Rebroadcasting... 10
+17:00:45 - Sending message [2|0|8|TRANSACTION|0]
+17:00:45 - Got message [2|17|1|TRANSACTION|1]
+17:00:45 - Rebroadcasting... 11
+17:00:45 - Sending message [2|0|8|TRANSACTION|2]
+17:00:45 - Got message [2|16|2|TRANSACTION|1]
+17:00:45 - Rebroadcasting... 12
+17:00:45 - Sending message [2|5|8|TRANSACTION|2]
+17:00:45 - Sending message [2|4|6|TRANSACTION|0]
+17:00:45 - Sending message [2|1|5|TRANSACTION|0]
+17:00:45 - Got message [2|9|2|AV_TOKEN|1]
+17:00:45 - Rebroadcasting... 1
+17:00:45 - Committing [2|9|2|AV_TOKEN|1]
+17:00:45 - Sending message [2|2|3|TRANSACTION|0]
+17:00:45 - Sending message [2|1|5|TRANSACTION|2]
+17:00:45 - Sending message [2|7|10|TRANSACTION|0]
+17:00:46 - Sending message [2|12|10|TRANSACTION|2]
+17:00:46 - Sending message [2|17|1|TRANSACTION|2]
+17:00:46 - Sending message [2|6|7|TRANSACTION|2]
+17:00:46 - Sending message [2|3|9|TRANSACTION|0]
+17:00:46 - Got message [2|13|2|TRANSACTION|1]
+17:00:46 - Rebroadcasting... 13
+17:00:46 - Got message [2|0|8|TRANSACTION|1]
+17:00:46 - Got message [2|14|6|TRANSACTION|1]
+17:00:46 - Already had this. No rebroadcast.
+17:00:46 - Rebroadcasting... 14
+17:00:46 - Got message [2|15|3|TRANSACTION|1]
+17:00:46 - Rebroadcasting... 15
+17:00:46 - Got message [2|10|7|TRANSACTION|1]
+17:00:46 - Rebroadcasting... 16
+poruka je krenula nakon snapshota, znaci nova je.
+17:00:46 - Committing [2|10|7|TRANSACTION|1]
+poruka je krenula nakon snapshota, znaci nova je.
+17:00:46 - Committing [2|11|4|TRANSACTION|1]
+poruka je krenula nakon snapshota, znaci nova je.
+17:00:46 - Committing [2|12|10|TRANSACTION|1]
+poruka je krenula nakon snapshota, znaci nova je.
+17:00:46 - Committing [2|13|2|TRANSACTION|1]
+poruka je krenula nakon snapshota, znaci nova je.
+17:00:46 - Committing [2|14|6|TRANSACTION|1]
+poruka je krenula nakon snapshota, znaci nova je.
+17:00:46 - Committing [2|15|3|TRANSACTION|1]
+poruka je krenula nakon snapshota, znaci nova je.
+17:00:46 - Committing [2|16|2|TRANSACTION|1]
+poruka je krenula nakon snapshota, znaci nova je.
+17:00:46 - Committing [2|17|1|TRANSACTION|1]
+17:00:46 - Got message [2|5|8|TRANSACTION|1]
+17:00:46 - Already had this. No rebroadcast.
+17:00:46 - Sending message [1|0||AV_DONE|2]
+17:00:46 - Sending message [2|6|7|TRANSACTION|0]
+17:00:46 - Sending message [2|7|10|TRANSACTION|2]
+17:00:46 - Sending message [2|12|10|TRANSACTION|0]
+17:00:46 - Sending message [2|9|2|AV_TOKEN|0]
+17:00:46 - Sending message [2|11|4|TRANSACTION|2]
+17:00:46 - Sending message [2|11|4|TRANSACTION|0]
+17:00:46 - Sending message [2|2|3|TRANSACTION|2]
+17:00:46 - Sending message [2|3|9|TRANSACTION|2]
+17:00:46 - Sending message [2|17|1|TRANSACTION|0]
+17:00:46 - Got message [2|1|5|TRANSACTION|1]
+17:00:46 - Already had this. No rebroadcast.
+17:00:46 - Got message [2|4|6|TRANSACTION|1]
+17:00:46 - Already had this. No rebroadcast.
+17:00:46 - Got message [2|7|10|TRANSACTION|1]
+17:00:46 - Already had this. No rebroadcast.
+17:00:46 - Sending message [2|16|2|TRANSACTION|2]
+17:00:46 - Sending message [2|16|2|TRANSACTION|0]
+17:00:46 - Sending message [2|9|2|AV_TOKEN|2]
+17:00:46 - Sending message [2|10|7|TRANSACTION|0]
+17:00:46 - Got message [2|2|3|TRANSACTION|1]
+17:00:46 - Already had this. No rebroadcast.
+17:00:47 - Got message [2|11|4|TRANSACTION|1]
+17:00:47 - Already had this. No rebroadcast.
+17:00:47 - Sending message [2|10|7|TRANSACTION|2]
+17:00:47 - Sending message [2|13|2|TRANSACTION|0]
+17:00:47 - Sending message [2|15|3|TRANSACTION|0]
+17:00:47 - Got message [2|3|9|TRANSACTION|1]
+17:00:47 - Already had this. No rebroadcast.
+17:00:47 - Got message [2|12|10|TRANSACTION|1]
+17:00:47 - Already had this. No rebroadcast.
+17:00:47 - Sending message [2|15|3|TRANSACTION|2]
+17:00:47 - Got message [2|6|7|TRANSACTION|1]
+17:00:47 - Already had this. No rebroadcast.
+17:00:47 - Got message [2|9|2|AV_TOKEN|1]
+17:00:47 - Already had this. No rebroadcast.
+17:00:47 - Sending message [2|14|6|TRANSACTION|2]
+17:00:47 - Got message [2|10|7|TRANSACTION|1]
+17:00:47 - Already had this. No rebroadcast.
+17:00:47 - Got message [2|17|1|TRANSACTION|1]
+17:00:47 - Already had this. No rebroadcast.
+17:00:47 - Sending message [2|13|2|TRANSACTION|2]
+17:00:47 - Sending message [2|14|6|TRANSACTION|0]
+17:00:47 - Got message [2|13|2|TRANSACTION|1]
+17:00:47 - Already had this. No rebroadcast.
+17:00:47 - Got message [2|16|2|TRANSACTION|1]
+17:00:47 - Already had this. No rebroadcast.
+17:00:48 - Got message [2|14|6|TRANSACTION|1]
+17:00:48 - Already had this. No rebroadcast.
+17:00:48 - Got message [2|15|3|TRANSACTION|1]
+17:00:48 - Already had this. No rebroadcast.
+17:00:49 - Got message [2|18||AV_TERMINATE|1]
+17:00:49 - Rebroadcasting... 1
+17:00:49 - Recorded bitcake amount for 1 = 1056
+17:00:49 - System bitcake count: 1056
+17:00:50 - Sending message [2|18||AV_TERMINATE|0]
+17:00:50 - Sending message [2|18||AV_TERMINATE|2]
+17:00:51 - Got message [2|18||AV_TERMINATE|1]
+17:00:51 - Already had this. No rebroadcast.
+17:00:58 - Current causal messages:
+17:00:58 - Message [2|0|8|TRANSACTION|1]: 8 from 2
+17:00:58 - Message [2|1|5|TRANSACTION|1]: 5 from 2
+17:00:58 - Message [2|2|3|TRANSACTION|1]: 3 from 2
+17:00:58 - Message [2|3|9|TRANSACTION|1]: 9 from 2
+17:00:58 - Message [2|4|6|TRANSACTION|1]: 6 from 2
+17:00:58 - Message [2|5|8|TRANSACTION|1]: 8 from 2
+17:00:58 - Message [2|6|7|TRANSACTION|1]: 7 from 2
+17:00:58 - Message [2|7|10|TRANSACTION|1]: 10 from 2
+17:00:58 - Message [2|9|2|AV_TOKEN|1]: 2 from 2
+17:00:58 - Message [2|10|7|TRANSACTION|1]: 7 from 2
+17:00:58 - Message [2|11|4|TRANSACTION|1]: 4 from 2
+17:00:58 - Message [2|12|10|TRANSACTION|1]: 10 from 2
+17:00:58 - Message [2|13|2|TRANSACTION|1]: 2 from 2
+17:00:58 - Message [2|14|6|TRANSACTION|1]: 6 from 2
+17:00:58 - Message [2|15|3|TRANSACTION|1]: 3 from 2
+17:00:58 - Message [2|16|2|TRANSACTION|1]: 2 from 2
+17:00:58 - Message [2|17|1|TRANSACTION|1]: 1 from 2
+17:00:58 - Stopping...

@@ -52,13 +52,17 @@ public class TransactionMessage extends BasicMessage {
 		//ako je poruka vec poslata ne oduzimamo opet sebi bitackove od svih servenata!
 		if(bitcakeManager instanceof  ABBitcakeManager) {
 			ABBitcakeManager bitcakeManagerSentMessages = (ABBitcakeManager) bitcakeManager;
-			if(bitcakeManagerSentMessages.getSentMessages().contains(this)) return;
-			else bitcakeManagerSentMessages.addSentMessages(this);
+			synchronized (AppConfig.sentMessagesLock){
+				if(bitcakeManagerSentMessages.getSentMessages().contains(this)) return;
+				else bitcakeManagerSentMessages.addSentMessages(this);
+			}
 		}
 		else if(bitcakeManager instanceof  AVBitcakeManager){
 			AVBitcakeManager bitcakeManagerSentMessages = (AVBitcakeManager) bitcakeManager;
-			if(bitcakeManagerSentMessages.getSentMessages().contains(this)) return;
-			else bitcakeManagerSentMessages.addSentMessages(this);
+			synchronized (AppConfig.sentMessagesLock){
+				if(bitcakeManagerSentMessages.getSentMessages().contains(this)) return;
+				else bitcakeManagerSentMessages.addSentMessages(this);
+			}
 		}
 
 
