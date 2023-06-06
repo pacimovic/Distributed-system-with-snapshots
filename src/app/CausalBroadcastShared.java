@@ -187,6 +187,7 @@ public class CausalBroadcastShared {
                                     if(otherClockLesser(myVectorClockCopy, transactionMessage.getSenderVectorClock())){
                                         //stara poruka ukljuci je u snapshot
                                         avBitcakeManager.snapshotAmount.getAndAdd(amountNumber);
+                                        avBitcakeManager.recordRecordTransaction(transactionMessage.getOriginalSenderInfo().getId(), amountNumber);
                                         System.out.println("stara poruka ukljuci je u snapshot");
                                     }
                                     else{

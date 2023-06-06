@@ -65,6 +65,15 @@ public class AVTerminateHandler implements MessageHandler {
                                 "Recorded bitcake amount for " + myId + " = " + avBitcakeManager.snapshotAmount.get());
                         sum += avBitcakeManager.snapshotAmount.get();
 
+                        int sentSum=0, getSum=0;
+                        for(int i = 0; i < AppConfig.getServentCount(); i++){
+                            if(i != AppConfig.myServentInfo.getId()){
+                                sentSum += avBitcakeManager.getSentHistory().get(i);
+                                getSum += avBitcakeManager.getRecordHistory().get(i);
+                            }
+                        }
+                        AppConfig.timestampedStandardPrint("Sent amount: " + sentSum);
+                        AppConfig.timestampedStandardPrint("Get amount: " + getSum);
 
                         AppConfig.timestampedStandardPrint("System bitcake count: " + sum);
                     }

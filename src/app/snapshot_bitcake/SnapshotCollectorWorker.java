@@ -239,23 +239,17 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 					AppConfig.timestampedStandardPrint(
 							"Recorded bitcake amount for " + myId + " = " + avBitcakeManager.snapshotAmount.get());
 					sum += avBitcakeManager.snapshotAmount.get();
-/*
-					for(int i=0; i < AppConfig.getServentCount(); i++){
-						if(i != myId){
-							int myAmount = avBitcakeManager.getSentHistory().get(i);
-							int iAmount = avBitcakeManager.getRecordHistory().get(myId);
 
-							if(myAmount != iAmount){
-								String outputString = String.format(
-										"Unreceived bitcake amount: %d from servent %d to servent %d",
-										myAmount - iAmount, myId, i);
-								AppConfig.timestampedStandardPrint(outputString);
-								sum += myAmount - iAmount;
-							}
+					int sentSum=0, getSum=0;
+					for(int i = 0; i < AppConfig.getServentCount(); i++){
+						if(i != AppConfig.myServentInfo.getId()){
+							sentSum += avBitcakeManager.getSentHistory().get(i);
+							getSum += avBitcakeManager.getRecordHistory().get(i);
 						}
 					}
+					AppConfig.timestampedStandardPrint("Sent amount: " + sentSum);
+					AppConfig.timestampedStandardPrint("Get amount: " + getSum);
 
- */
 					AppConfig.timestampedStandardPrint("System bitcake count: " + sum);
 
 					break;
