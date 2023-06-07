@@ -70,15 +70,16 @@ public class AVBitcakeManager implements BitcakeManager{
         Message doneMessage = new AVDoneMessage(AppConfig.myServentInfo, AppConfig.myServentInfo);
         snapshotCollector.addAVDoneMessage(AppConfig.myServentInfo.getId(), doneMessage);
 
-        //Svim porukama dajemo nas vektorski sat
-        Map<Integer, Integer> myClock = new ConcurrentHashMap<Integer, Integer>();
-        for (Map.Entry<Integer, Integer> entry : CausalBroadcastShared.getVectorClock().entrySet()) {
-            myClock.put(entry.getKey(), entry.getValue());
-        }
 
-        //Komitujemo token poruku kod nas i uvecamo vektorski sat
-        Message tokenMessage = new AVTokenMessage(AppConfig.myServentInfo, AppConfig.myServentInfo, AppConfig.myServentInfo.getId(), myClock);
-        CausalBroadcastShared.commitCausalMessage(tokenMessage);
+
+        Message tokenMessage = null;
+        synchronized (AppConfig.vectorClockLock){
+            Map<Integer, Integer> myClock = new ConcurrentHashMap<Integer, Integer>(CausalBroadcastShared.getVectorClock());
+            //Svim porukama dajemo nas vektorski sat
+            //Komitujemo token poruku kod nas i uvecamo vektorski sat
+            tokenMessage = new AVTokenMessage(AppConfig.myServentInfo, AppConfig.myServentInfo, AppConfig.myServentInfo.getId(), myClock);
+            CausalBroadcastShared.commitCausalMessage(tokenMessage);
+        }
 
 
         //posalji isti token svima!!!

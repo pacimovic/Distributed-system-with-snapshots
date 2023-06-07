@@ -284,6 +284,10 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 
 	@Override
 	public void startCollecting() {
+		if(this.collecting.get() == true){
+			AppConfig.timestampedErrorPrint("Snapshot isn't over yet!");
+			return;
+		}
 		boolean oldValue = this.collecting.getAndSet(true);
 
 		if (oldValue == true) {

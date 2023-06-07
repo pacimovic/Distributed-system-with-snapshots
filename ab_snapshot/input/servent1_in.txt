@@ -1,4 +1,3 @@
-transaction_burst
-pause 20000
+pause 15000
 print_causal
 stop

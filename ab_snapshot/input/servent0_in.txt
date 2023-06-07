@@ -1,5 +1,3 @@
-pause 10000
-bitcake_info
-pause 10000
+pause 15000
 print_causal
 stop

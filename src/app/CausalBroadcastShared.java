@@ -7,6 +7,7 @@ import app.snapshot_bitcake.LaiYangBitcakeManager;
 import servent.message.Message;
 import servent.message.MessageType;
 import servent.message.TransactionMessage;
+import servent.message.snapshot.ABTokenMessage;
 import servent.message.snapshot.AVTokenMessage;
 
 import java.util.*;
@@ -132,6 +133,7 @@ public class CausalBroadcastShared {
                 while (iterator.hasNext()) {
                     Message pendingMessage = iterator.next();
 
+                    //ako nije transakcija samo uvecamo vector clock
                     if(pendingMessage.getMessageType() == MessageType.AV_TOKEN){
                         AVTokenMessage avTokenMessage = (AVTokenMessage) pendingMessage;
                         if(!otherClockGreater(myVectorClock, avTokenMessage.getSenderVectorClock())){
@@ -146,6 +148,22 @@ public class CausalBroadcastShared {
                         }
                         else{
                             //System.out.println("Other clock is greater!(new message) Please wait...");
+                            continue;
+                        }
+                    }
+                    if(pendingMessage.getMessageType() == MessageType.AB_TOKEN){
+                        ABTokenMessage abTokenMessage = (ABTokenMessage) pendingMessage;
+                        if(!otherClockGreater(myVectorClock, abTokenMessage.getSenderVectorClock())){
+                            gotWork = true;
+
+                            AppConfig.timestampedStandardPrint("Committing " + pendingMessage);
+                            commitedCausalMessageList.add(pendingMessage);
+                            incrementClock(pendingMessage.getOriginalSenderInfo().getId());
+                            iterator.remove();
+
+                            break;
+                        }
+                        else{
                             continue;
                         }
                     }

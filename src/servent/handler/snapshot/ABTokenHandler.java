@@ -59,7 +59,8 @@ public class ABTokenHandler implements MessageHandler {
                         MessageUtil.sendMessage(tellMessage);
 
                         //Token poruku direktno komitujemo i uvecamo vector clock
-                        CausalBroadcastShared.commitCausalMessage(clientMessage);
+                        CausalBroadcastShared.addPendingMessage(clientMessage);
+                        CausalBroadcastShared.checkPendingMessages();
                     }
                     else{
                         AppConfig.timestampedStandardPrint("Already had this. No rebroadcast.");
