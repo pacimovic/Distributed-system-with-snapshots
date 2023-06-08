@@ -76,6 +76,9 @@ public class AVTerminateHandler implements MessageHandler {
                         AppConfig.timestampedStandardPrint("Get amount: " + getSum);
 
                         AppConfig.timestampedStandardPrint("System bitcake count: " + sum);
+
+                        //reset
+                        avBitcakeManager.snapshotAmount.set(0);
                     }
                     else{
                         AppConfig.timestampedStandardPrint("Already had this. No rebroadcast.");

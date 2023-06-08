@@ -252,6 +252,9 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 
 					AppConfig.timestampedStandardPrint("System bitcake count: " + sum);
 
+					//reset
+					avBitcakeManager.snapshotAmount.set(0);
+
 					break;
 				case NONE:
 					//Shouldn't be able to come here. See constructor.
