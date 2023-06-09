@@ -257,6 +257,7 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 
 					//reset
 					avBitcakeManager.snapshotAmount.set(0);
+					doneAVMessages.clear();
 
 					break;
 				case NONE:
