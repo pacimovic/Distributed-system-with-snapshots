@@ -1,41 +1,41 @@
-19:40:26 - Starting servent [4|localhost|1500]
-19:40:26 - Pausing for 16000 ms
-19:40:26 - Committing [4|0|4|TRANSACTION|4]
-19:40:27 - Sending message [4|0|4|TRANSACTION|3]
-19:40:28 - Got message [4|0|4|TRANSACTION|4]
-19:40:28 - Got own message back. No rebroadcast.
-19:40:29 - Got message [3|1|3|AV_TOKEN|4]
-19:40:29 - Rebroadcasting... 1
-19:40:29 - Committing [3|1|3|AV_TOKEN|4]
-19:40:29 - Got message [3|2|7|TRANSACTION|4]
-19:40:29 - Rebroadcasting... 1
+12:41:20 - Starting servent [4|localhost|1500]
+12:41:20 - Pausing for 16000 ms
+12:41:20 - Committing [4|0|7|TRANSACTION|4]
+12:41:22 - Sending message [4|0|7|TRANSACTION|3]
+12:41:23 - Got message [3|2|10|TRANSACTION|4]
+12:41:23 - Rebroadcasting... 1
+12:41:23 - Got message [4|0|7|TRANSACTION|4]
+12:41:23 - Got own message back. No rebroadcast.
+12:41:23 - Got message [3|1|3|AV_TOKEN|4]
+12:41:23 - Rebroadcasting... 1
+12:41:23 - Committing [3|1|3|AV_TOKEN|4]
 poruka je krenula nakon snapshota, znaci nova je.
-19:40:29 - Committing [3|2|7|TRANSACTION|4]
-19:40:30 - Sending message [4|1||AV_DONE|3]
-19:40:30 - Sending message [3|1|3|AV_TOKEN|3]
-19:40:30 - Sending message [3|2|7|TRANSACTION|3]
-19:40:35 - Got message [3|3||AV_TERMINATE|4]
-19:40:35 - Rebroadcasting... 1
-19:40:35 - Recorded bitcake amount for 4 = 984
-19:40:35 - Sent amount: 0
-19:40:35 - Get amount: 0
-19:40:35 - System bitcake count: 984
-19:40:36 - Sending message [3|3||AV_TERMINATE|3]
-19:40:38 - Got message [3|5|3|AV_TOKEN|4]
-19:40:38 - Rebroadcasting... 2
-19:40:38 - Committing [3|5|3|AV_TOKEN|4]
-19:40:39 - Got message [3|6||AV_TERMINATE|4]
-19:40:39 - Rebroadcasting... 2
-19:40:39 - Recorded bitcake amount for 4 = 991
-19:40:39 - Sent amount: 0
-19:40:39 - Get amount: 0
-19:40:39 - System bitcake count: 991
-19:40:39 - Sending message [3|5|3|AV_TOKEN|3]
-19:40:39 - Sending message [4|2||AV_DONE|3]
-19:40:40 - Sending message [3|6||AV_TERMINATE|3]
-19:40:42 - Current causal messages:
-19:40:42 - Message [4|0|4|TRANSACTION|4]: 4 from 4
-19:40:42 - Message [3|1|3|AV_TOKEN|4]: 3 from 3
-19:40:42 - Message [3|2|7|TRANSACTION|4]: 7 from 3
-19:40:42 - Message [3|5|3|AV_TOKEN|4]: 3 from 3
-19:40:42 - Stopping...
+12:41:23 - Committing [3|2|10|TRANSACTION|4]
+12:41:24 - Sending message [3|1|3|AV_TOKEN|3]
+12:41:24 - Sending message [4|1||AV_DONE|3]
+12:41:24 - Sending message [3|2|10|TRANSACTION|3]
+12:41:29 - Got message [3|3||AV_TERMINATE|4]
+12:41:29 - Rebroadcasting... 1
+12:41:29 - Recorded bitcake amount for 4 = 972
+12:41:29 - Sent amount: 0
+12:41:29 - Get amount: 0
+12:41:29 - System bitcake count: 972
+12:41:30 - Sending message [3|3||AV_TERMINATE|3]
+12:41:31 - Got message [3|5|3|AV_TOKEN|4]
+12:41:31 - Rebroadcasting... 2
+12:41:31 - Committing [3|5|3|AV_TOKEN|4]
+12:41:32 - Got message [3|6||AV_TERMINATE|4]
+12:41:32 - Rebroadcasting... 2
+12:41:32 - Recorded bitcake amount for 4 = 982
+12:41:32 - Sent amount: 0
+12:41:32 - Get amount: 0
+12:41:32 - System bitcake count: 982
+12:41:33 - Sending message [3|5|3|AV_TOKEN|3]
+12:41:33 - Sending message [4|2||AV_DONE|3]
+12:41:33 - Sending message [3|6||AV_TERMINATE|3]
+12:41:36 - Current causal messages:
+12:41:36 - Message [4|0|7|TRANSACTION|4]: 7 from 4
+12:41:36 - Message [3|1|3|AV_TOKEN|4]: 3 from 3
+12:41:36 - Message [3|2|10|TRANSACTION|4]: 10 from 3
+12:41:36 - Message [3|5|3|AV_TOKEN|4]: 3 from 3
+12:41:36 - Stopping...

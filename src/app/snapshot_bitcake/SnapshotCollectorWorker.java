@@ -247,6 +247,9 @@ public class SnapshotCollectorWorker implements SnapshotCollector {
 							getSum += avBitcakeManager.getRecordHistory().get(i);
 						}
 					}
+					//dodamo zakasnele poruke na sumu
+					sum += getSum;
+
 					AppConfig.timestampedStandardPrint("Sent amount: " + sentSum);
 					AppConfig.timestampedStandardPrint("Get amount: " + getSum);
 

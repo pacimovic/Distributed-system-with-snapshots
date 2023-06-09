@@ -72,6 +72,9 @@ public class AVTerminateHandler implements MessageHandler {
                                 getSum += avBitcakeManager.getRecordHistory().get(i);
                             }
                         }
+                        //dodamo zakasnele poruke na sumu
+                        sum += getSum;
+
                         AppConfig.timestampedStandardPrint("Sent amount: " + sentSum);
                         AppConfig.timestampedStandardPrint("Get amount: " + getSum);
 
